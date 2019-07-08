@@ -86,6 +86,7 @@ class WritteLikeViewController: UIViewController, UITextFieldDelegate {
          "LOTKEY" : "MoreHarts" as NSObject
       ]
       
+      
       self.RemorteConfigs.setDefaults(defaultsValues)
    }
    
