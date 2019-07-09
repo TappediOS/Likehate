@@ -42,6 +42,14 @@ class WritteHateViewController: UIViewController, UITextFieldDelegate, GADBanner
       defaults.set(HateArray, forKey: "OpenHateKey")
       defaults.synchronize()
       
+      if defaults.bool(forKey: "BuyRemoveAd") == true {
+         let storyboard: UIStoryboard = self.storyboard!
+         let RootView = storyboard.instantiateViewController(withIdentifier: "RootView")
+         let navi = UINavigationController(rootViewController: RootView)
+         present(navi, animated: true, completion: nil)
+         return
+      }
+      
       if interstitial.isReady {
          print("Ins  READY //^ ^//\n")
          interstitial.present(fromRootViewController: self)
@@ -81,8 +89,11 @@ class WritteHateViewController: UIViewController, UITextFieldDelegate, GADBanner
       InitRegiButton()
       
       //Init ad
-      InitInstitial()
-      InitBannerView()
+      if defaults.bool(forKey: "BuyRemoveAd") == false {
+         InitInstitial()
+         InitBannerView()
+      }
+      
       
       SetUpNavigationItemSetting()
       

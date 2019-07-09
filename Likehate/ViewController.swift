@@ -26,6 +26,8 @@ class ViewController: UIViewController {
    let KiraKiraView1 = AnimationView(name: "KiraKira")
    let KiraKiraView2 = AnimationView(name: "KiraKira")
    
+   let Kaminari = AnimationView(name: "Kaminari")
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
@@ -87,20 +89,27 @@ class ViewController: UIViewController {
    }
    
    private func InitPurchaseButton() {
-      noAdsButton = NoAdsButton(frame: CGRect(x: 10, y: 10, width: 100, height: 100))
-      noAdsButton.accessibilityIgnoresInvertColors = true
-      noAdsButton.translatesAutoresizingMaskIntoConstraints = false
+      let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
+      let navigationBarHeight = self.navigationController?.navigationBar.frame.size.height
+      let StartX = self.view.frame.width / 20
+      let StartY = statusBarHeight + navigationBarHeight! + self.view.frame.width / 20 * 2
+      let size = self.view.frame.height / 10
       
-      noAdsButton.bottomAnchor.constraint(equalTo: self.view.topAnchor, constant: self.view.frame.width / 20).isActive = true
-      noAdsButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: self.view.frame.width / 20).isActive = true
-      noAdsButton.widthAnchor.constraint(equalToConstant: self.view.frame.width / 20 * 1).isActive = true
-      noAdsButton.heightAnchor.constraint(equalToConstant: self.view.frame.width / 20 * 1).isActive = true
-      
+      noAdsButton = NoAdsButton(frame: CGRect(x: StartX, y: StartY, width: size, height: size))
+
       self.view.addSubview(noAdsButton)
       
    }
    private func InitRestoreButton() {
+      let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
+      let navigationBarHeight = self.navigationController?.navigationBar.frame.size.height
+      let StartX = (self.view.frame.width / 20) * 2 + self.view.frame.height / 10
+      let StartY = statusBarHeight + navigationBarHeight! + self.view.frame.width / 20 * 2
+      let size = self.view.frame.height / 10
       
+      restoreButton = RestoreButton(frame: CGRect(x: StartX, y: StartY, width: size, height: size))
+      
+      self.view.addSubview(restoreButton)
    }
 
    @objc func TapSettingButton(sender: UIBarButtonItem) {
@@ -140,6 +149,21 @@ class ViewController: UIViewController {
       }
    }
    
+   private func KaminariAni() {
+      UIView.animate(withDuration: 12, animations: {
+         //self.Kaminari.transform = CGAffineTransform(scaleX: 3, y: 3)
+         self.Kaminari.center.x += self.view.frame.width
+      }) { (finished) in
+         UIView.animate(withDuration: 13, animations: {
+            //self.Kaminari.transform = CGAffineTransform.identity
+            self.Kaminari.center.x -= self.view.frame.width
+         }) { (finished) in
+            self.KaminariAni()
+         }
+      }
+   }
+
+   
    private func InitKiraView1() {
       let StartY = self.view.frame.height - (self.view.frame.height / 20 * 9.5 + self.view.frame.height / 20)
       let StartX = self.view.frame.width / 20
@@ -170,6 +194,30 @@ class ViewController: UIViewController {
       KiraKiraView2.play()
       self.view.addSubview(KiraKiraView2)
       Kira2AniStart()
+   }
+   
+   private func InitKaminari() {
+      print(self.view.safeAreaInsets.bottom)
+      let StartY = self.view.frame.height - (self.view.frame.height / 5 + 5 + self.view.safeAreaInsets.bottom)
+      let StartX = self.view.frame.width / 20
+      let Wide = self.view.frame.height / 5
+      let Hight = self.view.frame.height / 5
+      let Rect = CGRect(x: StartX, y: StartY, width: Wide, height: Hight)
+      
+      Kaminari.frame = Rect
+      Kaminari.alpha = 0.7
+      Kaminari.loopMode = .loop
+      Kaminari.isUserInteractionEnabled = false
+      Kaminari.play()
+      self.view.addSubview(Kaminari)
+      KaminariAni()
+      //KaminariAniMove()
+   }
+   
+   override func viewWillLayoutSubviews() {
+      super.viewWillLayoutSubviews()
+      
+      InitKaminari()
    }
    
    override func viewWillAppear(_ animated: Bool) {

@@ -24,9 +24,9 @@ class RestoreButton: FUIButton {
    }
    
    private func InitSelf() {
-      self.setTitle(NSLocalizedString("No Ads", comment: ""), for: UIControl.State.normal)
-      self.buttonColor = UIColor.turquoise()
-      self.shadowColor = UIColor.greenSea()
+      self.setTitle(NSLocalizedString("Restore", comment: ""), for: UIControl.State.normal)
+      self.buttonColor = UIColor.flatPowderBlue()
+      self.shadowColor = UIColor.flatPowderBlueColorDark()
       self.shadowHeight = 3.0
       self.cornerRadius = 6.0
       self.titleLabel?.font = UIFont.boldFlatFont(ofSize: 50)
