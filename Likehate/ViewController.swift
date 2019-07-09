@@ -9,6 +9,8 @@
 import UIKit
 import Lottie
 import ChameleonFramework
+import FlatUIKit
+import SwiftyStoreKit
 
 class ViewController: UIViewController {
 
@@ -17,6 +19,9 @@ class ViewController: UIViewController {
    @IBOutlet weak var Second: UIButton!
    
    @IBOutlet weak var Bottom: UIButton!
+   
+   var noAdsButton: NoAdsButton!
+   var restoreButton: RestoreButton!
    
    let KiraKiraView1 = AnimationView(name: "KiraKira")
    let KiraKiraView2 = AnimationView(name: "KiraKira")
@@ -77,6 +82,25 @@ class ViewController: UIViewController {
       SetUpNavigationItemSetting()
       InitKiraView1()
       InitKiraView2()
+      InitPurchaseButton()
+      InitRestoreButton()
+   }
+   
+   private func InitPurchaseButton() {
+      noAdsButton = NoAdsButton(frame: CGRect(x: 10, y: 10, width: 100, height: 100))
+      noAdsButton.accessibilityIgnoresInvertColors = true
+      noAdsButton.translatesAutoresizingMaskIntoConstraints = false
+      
+      noAdsButton.bottomAnchor.constraint(equalTo: self.view.topAnchor, constant: self.view.frame.width / 20).isActive = true
+      noAdsButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: self.view.frame.width / 20).isActive = true
+      noAdsButton.widthAnchor.constraint(equalToConstant: self.view.frame.width / 20 * 1).isActive = true
+      noAdsButton.heightAnchor.constraint(equalToConstant: self.view.frame.width / 20 * 1).isActive = true
+      
+      self.view.addSubview(noAdsButton)
+      
+   }
+   private func InitRestoreButton() {
+      
    }
 
    @objc func TapSettingButton(sender: UIBarButtonItem) {

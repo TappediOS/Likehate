@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SwiftyStoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,6 +29,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       FirebaseApp.configure(options: fileopts!)
       GADMobileAds.sharedInstance().start(completionHandler: nil)
       //--------------------FIREBASE-----------------------//
+      
+      
+      //--------------------STORE KIT-----------------------//
+      SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
+         for purchase in purchases {
+            switch purchase.transaction.transactionState {
+            case .purchased, .restored:
+               if purchase.needsFinishTransaction {
+                  SwiftyStoreKit.finishTransaction(purchase.transaction)
+               }
+            // Unlock content
+            case .failed, .purchasing, .deferred:
+               break // do nothing
+            }
+         }
+      }
+      //--------------------STORE KIT-----------------------//
       
       
       //------------------- プッシュ通知-----------------//
