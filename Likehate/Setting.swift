@@ -38,7 +38,7 @@ class SettingViewController: UIViewController {
          self.defaults.synchronize()
       }
       
-      ComleateView.addButton(NSLocalizedString("cannel", comment: "")){
+      ComleateView.addButton(NSLocalizedString("cancel", comment: "")){
          Analytics.logEvent("delete cannel", parameters: nil)
       }
       ComleateView.showWarning(NSLocalizedString("doyouwanttodelete", comment: ""), subTitle: NSLocalizedString("thisoperation", comment: ""))

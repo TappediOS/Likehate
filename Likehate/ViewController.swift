@@ -28,6 +28,8 @@ class ViewController: UIViewController {
    
    let Kaminari = AnimationView(name: "Kaminari")
    
+   let Earth = AnimationView(name: "earth")
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
@@ -86,6 +88,7 @@ class ViewController: UIViewController {
       InitKiraView2()
       InitPurchaseButton()
       InitRestoreButton()
+      InitEarth()
    }
    
    private func InitPurchaseButton() {
@@ -110,6 +113,23 @@ class ViewController: UIViewController {
       restoreButton = RestoreButton(frame: CGRect(x: StartX, y: StartY, width: size, height: size))
       
       self.view.addSubview(restoreButton)
+   }
+   
+   private func InitEarth() {
+      let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
+      let navigationBarHeight = self.navigationController?.navigationBar.frame.size.height
+      let StartX = (self.view.frame.width / 20) * 3 + self.view.frame.height / 10 * 2
+      let StartY = statusBarHeight + navigationBarHeight! + self.view.frame.width / 20 * 2
+      let size = self.view.frame.height / 10
+      let Rect = CGRect(x: StartX, y: StartY, width: size, height: size)
+      
+      Earth.backgroundColor = UIColor.flatBlue()
+      Earth.alpha = 0.8
+      Earth.frame = Rect
+      Earth.loopMode = .loop
+      Earth.isUserInteractionEnabled = false
+      Earth.play()
+      self.view.addSubview(Earth)
    }
 
    @objc func TapSettingButton(sender: UIBarButtonItem) {
