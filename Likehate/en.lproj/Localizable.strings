@@ -33,3 +33,10 @@
 
 "No Ads" = "No Ads";
 "Restore" = "Restore";
+
+"cancel" = "Cancel";
+"delete" = "Delete";
+
+"doyouwanttodelete" = "Do you want to delete all data?";
+"thisoperation" = "This operation can not be undone";
+

@@ -32,3 +32,9 @@
 
 "No Ads" = "広告削除";
 "Restore" = "復元";
+
+"cancel" = "キャンセル";
+"delete" = "削除する";
+
+"doyouwanttodelete" = "全てのデータを削除しますか？";
+"thisoperation" = "この操作は取り消せません";

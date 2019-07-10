@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import SCLAlertView
+import Firebase
 
 class SettingViewController: UIViewController {
    
@@ -22,34 +24,24 @@ class SettingViewController: UIViewController {
    @IBOutlet weak var EraseButton: UIButton!
    
    @IBAction func DeletaeButton(_ sender: Any) {
-//      
-//      let popup = PopupDialog(title: ∑, message: NSLocalizedString("All", comment: ""))
-//
-//      // ポップアップに表示するボタンを作る
-//      // 「Cansel」と表示する普通のボタン
-//      let buttonTwo = DefaultButton(title: "Cansel") {
-//         // ここに選択時の処理を記述
-//
-//      }
-//
-//      // 「Delete」と表示する赤色のボタン
-//      let buttonThree = DestructiveButton(title: "Delete") {
-//         // ここに選択時の処理を記述
-//         self.LikeArray = []
-//         self.HateArray = []
-//
-//         self.defaults.set(self.LikeArray, forKey: "OpenLikeKey")
-//         self.defaults.synchronize()
-//         self.defaults.set(self.HateArray, forKey: "OpenHateKey")
-//         self.defaults.synchronize()
-//      }
-//
-//
-//      // addButtonで1個ずつボタンを追加するか、addButtonsで複数ボタンを配列にして一気に追加する
-//      popup.addButtons([buttonTwo, buttonThree])
-//
-//      // 作成したポップアップを表示する
-//      present(popup, animated: true, completion: nil)
+      
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
+      let ComleateView = SCLAlertView(appearance: Appearanse)
+      ComleateView.addButton(NSLocalizedString("delete", comment: "")){
+         Analytics.logEvent("delete all date", parameters: nil)
+         self.LikeArray = []
+         self.HateArray = []
+         
+         self.defaults.set(self.LikeArray, forKey: "OpenLikeKey")
+         self.defaults.synchronize()
+         self.defaults.set(self.HateArray, forKey: "OpenHateKey")
+         self.defaults.synchronize()
+      }
+      
+      ComleateView.addButton(NSLocalizedString("cannel", comment: "")){
+         Analytics.logEvent("delete cannel", parameters: nil)
+      }
+      ComleateView.showWarning(NSLocalizedString("doyouwanttodelete", comment: ""), subTitle: NSLocalizedString("thisoperation", comment: ""))
    }
    
    @IBAction func CreditsButton(_ sender: Any) {
