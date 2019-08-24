@@ -27,7 +27,44 @@ class WritteViewController: UIViewController {
       
       view.backgroundColor = UIColor.white
       
+      SetUpLateButton()
+      SetUpLikeButton()
+      
       SetUpNavigationItemSetting()
+   }
+   
+   private func SetUpLateButton() {
+      let ViewW = self.view.frame.width
+      let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
+      let navigationBarHeight = self.navigationController?.navigationBar.frame.size.height
+      let ViewH = self.view.frame.height - (statusBarHeight + navigationBarHeight!)
+      
+      let ButtonSliceNum: CGFloat = 25
+      
+      let ButtonWide = ViewW / ButtonSliceNum * (ButtonSliceNum - 2)
+      let ButtonHeight = ViewH / 25 * 9
+      
+      let StartX = ViewW / ButtonSliceNum
+      let StartY = ViewH / 25 * 3 + (statusBarHeight + navigationBarHeight!)
+      
+      like.frame = CGRect(x: StartX, y: StartY, width: ButtonWide, height: ButtonHeight)
+   }
+   
+   private func SetUpLikeButton() {
+      let ViewW = self.view.frame.width
+      let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
+      let navigationBarHeight = self.navigationController?.navigationBar.frame.size.height
+      let ViewH = self.view.frame.height - (statusBarHeight + navigationBarHeight!)
+      
+      let ButtonSliceNum: CGFloat = 25
+      
+      let ButtonWide = ViewW / ButtonSliceNum * (ButtonSliceNum - 2)
+      let ButtonHeight = ViewH / 25 * 9
+      
+      let StartX = ViewW / ButtonSliceNum
+      let StartY = ViewH / 25 * 13 + (statusBarHeight + navigationBarHeight!)
+      
+      hate.frame = CGRect(x: StartX, y: StartY, width: ButtonWide, height: ButtonHeight)
    }
    
    override func viewWillAppear(_ animated: Bool) {

@@ -66,12 +66,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Uw-Iz-Uiq">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Uw-Iz-Uiq">
                                 <rect key="frame" x="16" y="408" width="343" height="239"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="OO0-oH-kic"/>
-                                    <constraint firstAttribute="height" constant="239" id="Pzj-HP-hhV"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="59"/>
                                 <state key="normal" title="Like">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -80,12 +77,9 @@
                                     <segue destination="hua-PW-uJf" kind="show" id="yHz-ld-PD4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBD-Q9-Z4Z">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBD-Q9-Z4Z">
                                 <rect key="frame" x="16" y="145" width="343" height="240"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="1tY-Qg-JcU"/>
-                                    <constraint firstAttribute="height" constant="240" id="YTg-C4-eq0"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="53"/>
                                 <state key="normal" title="Hate">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -96,15 +90,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94234267979452058" green="0.97709760273972601" blue="0.9728167808219178" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="KBD-Q9-Z4Z" firstAttribute="leading" secondItem="f5j-o4-iJS" secondAttribute="leading" constant="16" id="AeG-y5-w3w"/>
-                            <constraint firstItem="f5j-o4-iJS" firstAttribute="trailing" secondItem="KBD-Q9-Z4Z" secondAttribute="trailing" constant="16" id="H36-pk-wcJ"/>
-                            <constraint firstItem="KBD-Q9-Z4Z" firstAttribute="top" secondItem="f5j-o4-iJS" secondAttribute="top" constant="81" id="HbS-ja-onN"/>
-                            <constraint firstItem="f5j-o4-iJS" firstAttribute="trailing" secondItem="0Uw-Iz-Uiq" secondAttribute="trailing" constant="16" id="U6A-GM-Ck5"/>
-                            <constraint firstItem="f5j-o4-iJS" firstAttribute="bottom" secondItem="0Uw-Iz-Uiq" secondAttribute="bottom" constant="20" id="bFr-KS-L5l"/>
-                            <constraint firstItem="0Uw-Iz-Uiq" firstAttribute="leading" secondItem="f5j-o4-iJS" secondAttribute="leading" constant="16" id="bsu-92-x4K"/>
-                            <constraint firstItem="0Uw-Iz-Uiq" firstAttribute="top" secondItem="KBD-Q9-Z4Z" secondAttribute="bottom" constant="23" id="cpm-7V-fgN"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="f5j-o4-iJS"/>
                     </view>
                     <connections>

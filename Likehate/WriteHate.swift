@@ -78,7 +78,6 @@ class WritteHateViewController: UIViewController, UITextFieldDelegate, GADBanner
       view.backgroundColor = UIColor.white
       
       if defaults.object(forKey: "OpenHateKey") != nil {
-         
          let object = defaults.object(forKey: "OpenHateKey") as? [String]
          for nameString in object! {
             HateArray.append(nameString as String)
@@ -96,8 +95,6 @@ class WritteHateViewController: UIViewController, UITextFieldDelegate, GADBanner
       
       
       SetUpNavigationItemSetting()
-      
-      
    }
    
    private func InitTextField() {
