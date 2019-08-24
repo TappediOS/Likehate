@@ -384,11 +384,24 @@
                                     <action selector="DeletaeButton:" destination="8uV-7Q-EZz" eventType="touchUpInside" id="Ocz-Vg-V5a"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drY-RG-9k9">
+                                <rect key="frame" x="16" y="327" width="343" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
+                                <state key="normal" title="  Contact Us">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="TapContactUsButton:" destination="8uV-7Q-EZz" eventType="touchUpInside" id="cFW-Vg-dlb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Apw-V4-E1Z"/>
                     </view>
                     <connections>
+                        <outlet property="ContactUsButton" destination="drY-RG-9k9" id="QGM-PH-wEv"/>
                         <outlet property="CreditsButton" destination="mst-yM-M5h" id="Hb7-Sm-Cgt"/>
                         <outlet property="EraseButton" destination="nep-uY-CFJ" id="Qp6-fK-DdH"/>
                     </connections>

@@ -15,10 +15,10 @@ class WritteViewController: UIViewController {
    @IBOutlet weak var hate: UIButton!
    @IBOutlet weak var like: UIButton!
    
-   let Zukei = AnimationView(name: "Zukei")
-   let MaruMaru = AnimationView(name: "MaruMaru")
-   let MaruZukei = AnimationView(name: "MaruZukei")
-   let Henka = AnimationView(name: "Henka")
+   let Zukei = AnimationView(name: "Patch")
+   let MaruMaru = AnimationView(name: "Good")
+   let MaruZukei = AnimationView(name: "Egg")
+   let Henka = AnimationView(name: "MaruKuru")
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -106,10 +106,10 @@ class WritteViewController: UIViewController {
       let ViewSliceNum: CGFloat = 25
       
       let AniViewW = ViewW / ViewSliceNum * 10
-      let AniViewH = ViewH / 25 * 6
+      let AniViewH = ViewH / 25 * 7
       
-      let StartX = ViewW / ViewSliceNum
-      let StartY = ViewH / 25 * 2 + (statusBarHeight + navigationBarHeight!)
+      let StartX = ViewW / ViewSliceNum * 1.5
+      let StartY = ViewH / 25 * 2.5 + (statusBarHeight + navigationBarHeight!)
       
       Zukei.frame = CGRect(x: StartX, y: StartY, width: AniViewW, height: AniViewH)
       Zukei.alpha = 1
@@ -118,6 +118,7 @@ class WritteViewController: UIViewController {
       Zukei.play()
       self.view.addSubview(Zukei)
    }
+   
    private func InitMsruMaru() {
       let ViewW = self.view.frame.width
       let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
@@ -130,7 +131,7 @@ class WritteViewController: UIViewController {
       let AniViewH = ViewH / 25 * 6
       
       let StartX = ViewW / ViewSliceNum * 13.5
-      let StartY = ViewH / 25 * 5 + (statusBarHeight + navigationBarHeight!)
+      let StartY = ViewH / 25 * 6 + (statusBarHeight + navigationBarHeight!)
       
       MaruMaru.frame = CGRect(x: StartX, y: StartY, width: AniViewW, height: AniViewH)
       MaruMaru.alpha = 1
@@ -139,6 +140,8 @@ class WritteViewController: UIViewController {
       MaruMaru.play()
       self.view.addSubview(MaruMaru)
    }
+   
+   
    private func InitMaruZukei() {
       let ViewW = self.view.frame.width
       let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
@@ -151,7 +154,7 @@ class WritteViewController: UIViewController {
       let AniViewH = ViewH / 25 * 6
       
       let StartX = ViewW / ViewSliceNum
-      let StartY = ViewH / 25 * 15 + (statusBarHeight + navigationBarHeight!)
+      let StartY = ViewH / 25 * 16 + (statusBarHeight + navigationBarHeight!)
       
       MaruZukei.frame = CGRect(x: StartX, y: StartY, width: AniViewW, height: AniViewH)
       MaruZukei.alpha = 1
@@ -169,18 +172,20 @@ class WritteViewController: UIViewController {
       
       let ViewSliceNum: CGFloat = 25
       
-      let AniViewW = ViewW / ViewSliceNum * 12
+      let AniViewW = ViewW / ViewSliceNum * 10
       let AniViewH = ViewH / 25 * 6
       
-      let StartX = ViewW / ViewSliceNum * 13.5
+      let StartX = ViewW / ViewSliceNum * 14
       let StartY = ViewH / 25 * 13 + (statusBarHeight + navigationBarHeight!)
       
       Henka.frame = CGRect(x: StartX, y: StartY, width: AniViewW, height: AniViewH)
-      Henka.alpha = 1
       Henka.loopMode = .loop
+      MaruZukei.alpha = 1
       Henka.isUserInteractionEnabled = false
+      Henka.animationSpeed = 0.25
       Henka.play()
       self.view.addSubview(Henka)
+      
    }
    
    override func didReceiveMemoryWarning() {

@@ -23,6 +23,9 @@ class SettingViewController: UIViewController {
    
    @IBOutlet weak var EraseButton: UIButton!
    
+   @IBOutlet weak var ContactUsButton: UIButton!
+   
+   
    @IBAction func DeletaeButton(_ sender: Any) {
       
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
@@ -73,6 +76,24 @@ class SettingViewController: UIViewController {
       
    }
    
+   
+   @IBAction func TapContactUsButton(_ sender: Any) {
+      let url = URL(string: "https://forms.gle/tzrZPy3NDugyyJbc8")
+      if let OpenURL = url {
+         if UIApplication.shared.canOpenURL(OpenURL){
+            Analytics.logEvent("OpenContactUsURL", parameters: nil)
+            UIApplication.shared.open(OpenURL)
+         }else{
+            Analytics.logEvent("CantOpenURL", parameters: nil)
+            print("URL nil ちゃうのにひらけない")
+         }
+      }else{
+         Analytics.logEvent("CantOpenURLWithNil", parameters: nil)
+         print("URL 開こうとしたらNilやった")
+      }
+   }
+   
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
@@ -98,6 +119,7 @@ class SettingViewController: UIViewController {
       
       EraseButton.translatesAutoresizingMaskIntoConstraints = false
       CreditsButton.translatesAutoresizingMaskIntoConstraints = false
+      ContactUsButton.translatesAutoresizingMaskIntoConstraints = false
       
       let navi = (self.navigationController?.navigationBar.frame.size.height)!
       let sta = UIApplication.shared.statusBarFrame.size.height
@@ -111,6 +133,11 @@ class SettingViewController: UIViewController {
       EraseButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
       EraseButton.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
       EraseButton.heightAnchor.constraint(equalToConstant: view.frame.width / 4).isActive = true
+      
+      ContactUsButton.topAnchor.constraint(equalTo: EraseButton.bottomAnchor, constant: view.frame.width / 8).isActive = true
+      ContactUsButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+      ContactUsButton.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
+      ContactUsButton.heightAnchor.constraint(equalToConstant: view.frame.width / 4).isActive = true
       
       
   
