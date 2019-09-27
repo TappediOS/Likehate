@@ -53,7 +53,7 @@ class WritteHateViewController: UIViewController, UITextFieldDelegate, GADBanner
       if interstitial.isReady {
          print("Ins  READY //^ ^//\n")
          interstitial.present(fromRootViewController: self)
-         request.testDevices = [kGADSimulatorID]
+         //request.testDevices = [(kGADSimulatorID as! String)]
          interstitial = GADInterstitial(adUnitID: "ca-app-pub-1460017825820383/9263543904")
          interstitial.load(request)
       } else {
@@ -190,6 +190,8 @@ class WritteHateViewController: UIViewController, UITextFieldDelegate, GADBanner
       let navi = UINavigationController(rootViewController: RootView)
       // アニメーションの設定
       // navi.modalTransitionStyle = .coverVertical
+      RootView.modalPresentationStyle = .fullScreen
+      navi.modalPresentationStyle = .fullScreen
       present(navi, animated: true, completion: nil)
 
    }

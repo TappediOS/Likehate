@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ppm-5t-cO6">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ppm-5t-cO6">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -92,6 +90,7 @@
                         <color key="backgroundColor" red="0.94234267979452058" green="0.97709760273972601" blue="0.9728167808219178" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="f5j-o4-iJS"/>
                     </view>
+                    <navigationItem key="navigationItem" id="2Q2-77-Nhf"/>
                     <connections>
                         <outlet property="hate" destination="KBD-Q9-Z4Z" id="B8D-lC-zqr"/>
                         <outlet property="like" destination="0Uw-Iz-Uiq" id="L79-xI-uFG"/>
@@ -110,7 +109,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VAm-rn-kV0">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -123,6 +122,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mFQ-HV-I1D"/>
                     </view>
+                    <navigationItem key="navigationItem" id="IDM-UU-y8N"/>
                     <connections>
                         <outlet property="tableView" destination="VAm-rn-kV0" id="i6W-p7-OyV"/>
                     </connections>
@@ -140,7 +140,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4n4-U8-bi6">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -153,6 +153,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EDD-kt-vZ2"/>
                     </view>
+                    <navigationItem key="navigationItem" id="W6j-Mb-qPv"/>
                     <connections>
                         <outlet property="tableView" destination="4n4-U8-bi6" id="OFv-Ds-PcJ"/>
                     </connections>
@@ -170,19 +171,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What Do You Like ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="a9E-4h-wv0">
-                                <rect key="frame" x="84" y="137" width="207" height="27"/>
+                                <rect key="frame" x="84" y="117" width="207" height="27"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nii-zo-fZf" customClass="FUITextField">
-                                <rect key="frame" x="54" y="207" width="267" height="30"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="54" y="187" width="267" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sps-lM-pm3" customClass="FUIButton">
-                                <rect key="frame" x="117" y="267" width="141" height="74"/>
+                                <rect key="frame" x="117" y="251" width="141" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="74" id="Gui-Qs-ymq"/>
                                 </constraints>
@@ -208,6 +208,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hK4-mY-LwX"/>
                     </view>
+                    <navigationItem key="navigationItem" id="6Da-cM-0VP"/>
                     <connections>
                         <outlet property="Label" destination="a9E-4h-wv0" id="gkn-vq-lk5"/>
                         <outlet property="RegiButton" destination="sps-lM-pm3" id="pst-eq-8Bl"/>
@@ -247,13 +248,14 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                 <state key="normal" title="OK !"/>
                                 <connections>
-                                    <segue destination="ppm-5t-cO6" kind="show" id="fAT-jM-xuh"/>
+                                    <segue destination="ppm-5t-cO6" kind="presentation" modalPresentationStyle="overFullScreen" id="30d-Q8-i6g"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="v3N-9M-5bO"/>
                     </view>
+                    <navigationItem key="navigationItem" id="OVQ-36-LrQ"/>
                     <connections>
                         <outlet property="done" destination="D88-qj-ul9" id="MR2-qM-cp3"/>
                         <outlet property="label" destination="e1e-YD-NS5" id="gaZ-aA-vje"/>
@@ -273,7 +275,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What Do You Hate ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="pmg-71-78S">
-                                <rect key="frame" x="83" y="112" width="209" height="27"/>
+                                <rect key="frame" x="83" y="92" width="209" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="bI8-j9-1dh"/>
                                 </constraints>
@@ -282,20 +284,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aJt-0O-zNF" customClass="FUITextField">
-                                <rect key="frame" x="54" y="175" width="267" height="30"/>
+                                <rect key="frame" x="54" y="155" width="267" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Z7Q-Yv-EWV"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3vs-na-9en" customClass="GADBannerView">
-                                <rect key="frame" x="16" y="380" width="343" height="267"/>
+                                <rect key="frame" x="16" y="360" width="343" height="287"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7M-Ch-X2i" customClass="FUIButton">
-                                <rect key="frame" x="112" y="264" width="151" height="80"/>
+                                <rect key="frame" x="112" y="244" width="151" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="QjN-8j-GGv"/>
                                 </constraints>
@@ -324,6 +325,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NSR-JG-gOT"/>
                     </view>
+                    <navigationItem key="navigationItem" id="oNC-en-8Ck"/>
                     <connections>
                         <outlet property="HateTextField" destination="aJt-0O-zNF" id="f4Q-ks-b8w"/>
                         <outlet property="RegiButton" destination="h7M-Ch-X2i" id="dc7-nd-UWF"/>
@@ -340,7 +342,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ppm-5t-cO6" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8k2-l2-9UH">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -400,6 +402,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Apw-V4-E1Z"/>
                     </view>
+                    <navigationItem key="navigationItem" id="pVy-Ay-kYZ"/>
                     <connections>
                         <outlet property="ContactUsButton" destination="drY-RG-9k9" id="QGM-PH-wEv"/>
                         <outlet property="CreditsButton" destination="mst-yM-M5h" id="Hb7-Sm-Cgt"/>
