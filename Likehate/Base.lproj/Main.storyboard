@@ -327,6 +327,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="oNC-en-8Ck"/>
                     <connections>
+                        <outlet property="HateLabel" destination="pmg-71-78S" id="lH0-JS-l2S"/>
                         <outlet property="HateTextField" destination="aJt-0O-zNF" id="f4Q-ks-b8w"/>
                         <outlet property="RegiButton" destination="h7M-Ch-X2i" id="dc7-nd-UWF"/>
                         <outlet property="bannerView" destination="3vs-na-9en" id="oHz-9V-UWp"/>

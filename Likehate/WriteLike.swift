@@ -50,16 +50,22 @@ class WritteLikeViewController: UIViewController, UITextFieldDelegate {
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      view.backgroundColor = UIColor(red: 0.941176, green: 0.937254, blue: 0.960784, alpha: 1)
+      
       
       InitTextField()
       InitRegiButton()
       
-      TextField.accessibilityIdentifier = IdenMane.Like.LikeTextField
-      RegiButton.accessibilityIdentifier = IdenMane.Like.LikeRegiButton
+      TextField.accessibilityIdentifier = "LikeTextField"
+      RegiButton.accessibilityIdentifier = "LikeRegiButton"
+      
+      if #available(iOS 13.0, *) {
+         view.backgroundColor = UIColor.systemBackground
+         TextField.textColor = UIColor.label
+         TextField.backgroundColor = UIColor.systemGray
+         Label.textColor = UIColor.label
+      }
       
       TextField.delegate = self
-      view.backgroundColor = UIColor.white      
       if defaults.object(forKey: "OpenLikeKey") != nil {
          
          let object = defaults.object(forKey: "OpenLikeKey") as? [String]

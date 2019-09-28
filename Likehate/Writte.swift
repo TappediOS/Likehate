@@ -20,6 +20,7 @@ class WritteViewController: UIViewController {
    let MaruZukei = AnimationView(name: "Egg")
    let Henka = AnimationView(name: "MaruKuru")
    
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
@@ -28,14 +29,20 @@ class WritteViewController: UIViewController {
       hate.layer.borderWidth = 0.25
       hate.layer.borderColor = UIColor.black.cgColor
       hate.layer.cornerRadius = 10
-      hate.accessibilityIdentifier = IdenMane.Regi.HateButton
+      hate.accessibilityIdentifier = "seeHateButton"
       
       like.layer.borderWidth = 0.25
       like.layer.borderColor = UIColor.black.cgColor
       like.layer.cornerRadius = 10
-      like.accessibilityIdentifier = IdenMane.Regi.LikeButton
+      like.accessibilityIdentifier = "seeLikeButton"
       
-      view.backgroundColor = UIColor.white
+      if #available(iOS 13.0, *) {
+         view.backgroundColor = UIColor.systemBackground
+         like.backgroundColor = UIColor.systemGray6
+         like.setTitleColor(.label, for: .normal)
+         hate.backgroundColor = .systemGray6
+         hate.setTitleColor(.label, for: .normal)
+      }
       
       SetUpLateButton()
       SetUpLikeButton()

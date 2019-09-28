@@ -19,17 +19,26 @@ class HateViewController: UIViewController, UITableViewDelegate, UITableViewData
    var HateArray: [String] = []
    let defaults = UserDefaults.standard
    
+   let SeeHateBannerView = GADBannerView()
+   let BannerViewReqest = GADRequest()
+   let BANNER_VIEW_TEST_ID: String = "ca-app-pub-3940256099942544/2934735716"
+   let BANNER_VIEW_ID: String = "ca-app-pub-1460017825820383/1086930169"
 
    
    override func viewDidLoad() {
       super.viewDidLoad()
       
       
-      view.backgroundColor = UIColor.white
+      if #available(iOS 13.0, *) {
+         view.backgroundColor = .systemBackground
+      } else {
+         view.backgroundColor = UIColor.white
+         tableView.backgroundColor = UIColor.white
+      }
       tableView.delegate = self
       tableView.dataSource = self
       
-      tableView.accessibilityIdentifier = IdenMane.SeeHate.HateTableView
+      tableView.accessibilityIdentifier = "HateTableView"
       
       if defaults.object(forKey: "OpenHateKey") != nil {
          
@@ -44,6 +53,42 @@ class HateViewController: UIViewController, UITableViewDelegate, UITableViewData
       
       SetUpNavigationItemSetting()
       
+      InitAllADCheck()
+      
+   }
+   
+   private func InitBannerView() {
+      #if DEBUG
+         print("\n\n--------INFO ADMOB--------------\n")
+         print("Google Mobile ads SDK Versioin -> " + GADRequest.sdkVersion() + "\n")
+         self.SeeHateBannerView.adUnitID = BANNER_VIEW_TEST_ID
+         self.BannerViewReqest.testDevices = ["9d012329e337de42666c706e842b7819"];
+         print("バナー広告：テスト環境\n\n")
+      #else
+         print("\n\n--------INFO ADMOB--------------\n")
+         print("Google Mobile ads SDK Versioin -> " + GADRequest.sdkVersion() + "\n")
+         self.SeeHateBannerView.adUnitID = BANNER_VIEW_ID
+         print("バナー広告：本番環境")
+      #endif
+      
+      //GameClearBannerView.backgroundColor = .black
+      SeeHateBannerView.frame = CGRect(x: 0, y: view.frame.height - 50, width: view.frame.width, height: 50)
+      view.addSubview(SeeHateBannerView)
+      view.bringSubviewToFront(SeeHateBannerView)
+      
+      SeeHateBannerView.rootViewController = self
+      SeeHateBannerView.delegate = self
+      
+      SeeHateBannerView.load(BannerViewReqest)
+   }
+   
+   //Ad Check
+   private func InitAllADCheck() {
+      if UserDefaults.standard.bool(forKey: "BuyRemoveAd") == false{
+         InitBannerView()
+      }else{
+         print("課金をしているので広告の初期化は行いません")
+      }
    }
    
    //SetUp
@@ -99,6 +144,41 @@ class HateViewController: UIViewController, UITableViewDelegate, UITableViewData
    override func didReceiveMemoryWarning() {
       super.didReceiveMemoryWarning()
       // Dispose of any resources that can be recreated.
+   }
+   
+   
+   //MARK:- ADMOB
+   /// Tells the delegate an ad request loaded an ad.
+   func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+      print("広告(banner)のロードが完了しました。")
+   }
+   
+   /// Tells the delegate an ad request failed.
+   func adView(_ bannerView: GADBannerView,
+               didFailToReceiveAdWithError error: GADRequestError) {
+      print("広告(banner)のロードに失敗しました。: \(error.localizedDescription)")
+   }
+   
+   /// Tells the delegate that a full-screen view will be presented in response
+   /// to the user clicking on an ad.
+   func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+      print("adViewWillPresentScreen")
+   }
+   
+   /// Tells the delegate that the full-screen view will be dismissed.
+   func adViewWillDismissScreen(_ bannerView: GADBannerView) {
+      print("adViewWillDismissScreen")
+   }
+   
+   /// Tells the delegate that the full-screen view has been dismissed.
+   func adViewDidDismissScreen(_ bannerView: GADBannerView) {
+      print("adViewDidDismissScreen")
+   }
+   
+   /// Tells the delegate that a user click will open another app (such as
+   /// the App Store), backgrounding the current app.
+   func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
+      print("adViewWillLeaveApplication")
    }
    
 }

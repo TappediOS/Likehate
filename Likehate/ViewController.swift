@@ -36,7 +36,11 @@ class ViewController: UIViewController {
       
       
    
-      view.backgroundColor = UIColor(red: 0.941176, green: 0.937254, blue: 0.960784, alpha: 1)
+      if #available(iOS 13.0, *) {
+         view.backgroundColor = UIColor.systemGray6
+      } else {
+         view.backgroundColor = UIColor.white
+      }
       
       Top.accessibilityIgnoresInvertColors = true
       Second.accessibilityIgnoresInvertColors = true
@@ -45,6 +49,8 @@ class ViewController: UIViewController {
       Top.translatesAutoresizingMaskIntoConstraints = false
       Second.translatesAutoresizingMaskIntoConstraints = false
       Bottom.translatesAutoresizingMaskIntoConstraints = false
+      
+
      
       
       
@@ -95,12 +101,12 @@ class ViewController: UIViewController {
    }
    
    func InitAccessibilityIdentifure() {
-      Top.accessibilityIdentifier = IdenMane.first.RegiButton
-      Second.accessibilityIdentifier = IdenMane.first.GoLikeButton
-      Bottom.accessibilityIdentifier = IdenMane.first.GoHateButton
+      Top.accessibilityIdentifier = "RegiButton"
+      Second.accessibilityIdentifier = "GoLikeButton"
+      Bottom.accessibilityIdentifier = "GoHateButton"
       
-      noAdsButton.accessibilityIdentifier = IdenMane.first.NoAdButton
-      restoreButton.accessibilityIdentifier = IdenMane.first.RestoreButton
+      noAdsButton.accessibilityIdentifier = "NoAdButton"
+      restoreButton.accessibilityIdentifier = "RestoreButton"
       
       
    }

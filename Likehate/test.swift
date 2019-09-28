@@ -28,7 +28,10 @@ class testViewController: UIViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      view.backgroundColor = UIColor(red: 0.941176, green: 0.937254, blue: 0.960784, alpha: 1)
+      if #available(iOS 13.0, *) {
+         view.backgroundColor = UIColor.systemBackground
+         label.textColor = .label
+      }
       
       if defaults.object(forKey: "OpenLikeKey") != nil {
          
@@ -53,6 +56,8 @@ class testViewController: UIViewController {
       testView.translatesAutoresizingMaskIntoConstraints = false
       label.translatesAutoresizingMaskIntoConstraints = false
       done.translatesAutoresizingMaskIntoConstraints = false
+      
+      done.accessibilityIdentifier = "OKButton"
       
       let navi = (self.navigationController?.navigationBar.frame.size.height)!
       let sta = UIApplication.shared.statusBarFrame.size.height

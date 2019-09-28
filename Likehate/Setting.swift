@@ -61,7 +61,13 @@ class SettingViewController: UIViewController {
       
       //scrollViewの大きさを設定。viewと同じサイズ
       scrollView.frame = self.view.frame
-      scrollView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.88)
+      
+      if #available(iOS 13.0, *) {
+         scrollView.backgroundColor = UIColor.systemGray3.withAlphaComponent(0.89)
+         label.textColor = UIColor.label
+      } else {
+         scrollView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.88)
+      }
       
       //スクロール領域の設定
       scrollView.contentSize = CGSize(width:self.view.frame.width, height:label.frame.height)
@@ -97,7 +103,11 @@ class SettingViewController: UIViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      view.backgroundColor = UIColor(red: 0.941176, green: 0.937254, blue: 0.960784, alpha: 1)
+      if #available(iOS 13.0, *) {
+         view.backgroundColor = UIColor.systemBackground
+      } else {
+         view.backgroundColor = UIColor.white
+      }
       
       if defaults.object(forKey: "OpenHateKey") != nil {
          
@@ -139,8 +149,15 @@ class SettingViewController: UIViewController {
       ContactUsButton.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
       ContactUsButton.heightAnchor.constraint(equalToConstant: view.frame.width / 4).isActive = true
       
-      
-  
+      if #available(iOS 13.0, *) {
+         CreditsButton.backgroundColor = UIColor.systemGray6
+         EraseButton.backgroundColor = UIColor.systemGray6
+         ContactUsButton.backgroundColor = UIColor.systemGray6
+         
+         CreditsButton.setTitleColor(.label, for: .normal)
+         EraseButton.setTitleColor(.systemPink, for: .normal)
+         ContactUsButton.setTitleColor(.label, for: .normal)
+      }
    }
    
    override func didReceiveMemoryWarning() {

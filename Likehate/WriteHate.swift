@@ -15,6 +15,7 @@ import Firebase
 class WritteHateViewController: UIViewController, UITextFieldDelegate, GADBannerViewDelegate, GADInterstitialDelegate  {
    
    
+   @IBOutlet weak var HateLabel: UILabel!
    @IBOutlet weak var HateTextField: FUITextField!
    var HateArray: [String] = []
    var num = 0
@@ -72,22 +73,15 @@ class WritteHateViewController: UIViewController, UITextFieldDelegate, GADBanner
   
    override func viewDidLoad() {
       super.viewDidLoad()
-      view.backgroundColor = UIColor(red: 0.941176, green: 0.937254, blue: 0.960784, alpha: 1)
       
       HateTextField.delegate = self
+      
+      
       if #available(iOS 13.0, *) {
-         let dynamicColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
-            if traitCollection.userInterfaceStyle == .dark {
-               return UIColor(red: 1 - 0.941176, green: 1 - 0.937254, blue: 1 - 0.960784, alpha: 1)
-            } else {
-               return UIColor(red: 0.941176, green: 0.937254, blue: 0.960784, alpha: 1)
-            }
-         }
-         
-         view.backgroundColor = dynamicColor
-      } else {
-         // Fallback on earlier versions
-         view.backgroundColor = UIColor(red: 0.941176, green: 0.937254, blue: 0.960784, alpha: 1)
+         view.backgroundColor = UIColor.systemBackground
+         HateTextField.textColor = UIColor.label
+         HateTextField.backgroundColor = UIColor.systemGray
+         HateLabel.textColor = UIColor.label
       }
       
       if defaults.object(forKey: "OpenHateKey") != nil {
@@ -100,8 +94,8 @@ class WritteHateViewController: UIViewController, UITextFieldDelegate, GADBanner
       InitTextField()
       InitRegiButton()
       
-      HateTextField.accessibilityIdentifier = IdenMane.Hate.HateTextField
-      RegiButton.accessibilityIdentifier = IdenMane.Hate.HateRegiButton
+      HateTextField.accessibilityIdentifier = "HateTextField"
+      RegiButton.accessibilityIdentifier = "HateRegiButton"
       
       //Init ad
       if defaults.bool(forKey: "BuyRemoveAd") == false {

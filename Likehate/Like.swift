@@ -19,11 +19,16 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      view.backgroundColor = UIColor.white
+      if #available(iOS 13.0, *) {
+         view.backgroundColor = UIColor.systemGray6
+      } else {
+         view.backgroundColor = UIColor.white
+         tableView.backgroundColor = UIColor.white
+      }
       tableView.delegate = self
       tableView.dataSource = self
       
-      tableView.accessibilityIdentifier = IdenMane.SeeLike.LikeTableView
+      tableView.accessibilityIdentifier = "LikeTableView"
       
       if defaults.object(forKey: "OpenLikeKey") != nil {
          
