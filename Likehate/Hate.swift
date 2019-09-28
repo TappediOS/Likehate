@@ -29,6 +29,8 @@ class HateViewController: UIViewController, UITableViewDelegate, UITableViewData
       tableView.delegate = self
       tableView.dataSource = self
       
+      tableView.accessibilityIdentifier = IdenMane.SeeHate.HateTableView
+      
       if defaults.object(forKey: "OpenHateKey") != nil {
          
          let object = defaults.object(forKey: "OpenHateKey") as? [String]

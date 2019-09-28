@@ -75,7 +75,20 @@ class WritteHateViewController: UIViewController, UITextFieldDelegate, GADBanner
       view.backgroundColor = UIColor(red: 0.941176, green: 0.937254, blue: 0.960784, alpha: 1)
       
       HateTextField.delegate = self
-      view.backgroundColor = UIColor.white
+      if #available(iOS 13.0, *) {
+         let dynamicColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
+            if traitCollection.userInterfaceStyle == .dark {
+               return UIColor(red: 1 - 0.941176, green: 1 - 0.937254, blue: 1 - 0.960784, alpha: 1)
+            } else {
+               return UIColor(red: 0.941176, green: 0.937254, blue: 0.960784, alpha: 1)
+            }
+         }
+         
+         view.backgroundColor = dynamicColor
+      } else {
+         // Fallback on earlier versions
+         view.backgroundColor = UIColor(red: 0.941176, green: 0.937254, blue: 0.960784, alpha: 1)
+      }
       
       if defaults.object(forKey: "OpenHateKey") != nil {
          let object = defaults.object(forKey: "OpenHateKey") as? [String]
@@ -86,6 +99,9 @@ class WritteHateViewController: UIViewController, UITextFieldDelegate, GADBanner
       
       InitTextField()
       InitRegiButton()
+      
+      HateTextField.accessibilityIdentifier = IdenMane.Hate.HateTextField
+      RegiButton.accessibilityIdentifier = IdenMane.Hate.HateRegiButton
       
       //Init ad
       if defaults.bool(forKey: "BuyRemoveAd") == false {

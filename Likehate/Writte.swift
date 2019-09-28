@@ -28,10 +28,12 @@ class WritteViewController: UIViewController {
       hate.layer.borderWidth = 0.25
       hate.layer.borderColor = UIColor.black.cgColor
       hate.layer.cornerRadius = 10
+      hate.accessibilityIdentifier = IdenMane.Regi.HateButton
       
       like.layer.borderWidth = 0.25
       like.layer.borderColor = UIColor.black.cgColor
       like.layer.cornerRadius = 10
+      like.accessibilityIdentifier = IdenMane.Regi.LikeButton
       
       view.backgroundColor = UIColor.white
       

@@ -23,6 +23,8 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
       tableView.delegate = self
       tableView.dataSource = self
       
+      tableView.accessibilityIdentifier = IdenMane.SeeLike.LikeTableView
+      
       if defaults.object(forKey: "OpenLikeKey") != nil {
          
          let object = defaults.object(forKey: "OpenLikeKey") as? [String]

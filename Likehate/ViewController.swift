@@ -30,6 +30,7 @@ class ViewController: UIViewController {
    
    let Earth = AnimationView(name: "earth")
    
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
@@ -89,6 +90,19 @@ class ViewController: UIViewController {
       InitPurchaseButton()
       InitRestoreButton()
       InitEarth()
+      
+      InitAccessibilityIdentifure()
+   }
+   
+   func InitAccessibilityIdentifure() {
+      Top.accessibilityIdentifier = IdenMane.first.RegiButton
+      Second.accessibilityIdentifier = IdenMane.first.GoLikeButton
+      Bottom.accessibilityIdentifier = IdenMane.first.GoHateButton
+      
+      noAdsButton.accessibilityIdentifier = IdenMane.first.NoAdButton
+      restoreButton.accessibilityIdentifier = IdenMane.first.RestoreButton
+      
+      
    }
    
    private func InitPurchaseButton() {
@@ -137,6 +151,7 @@ class ViewController: UIViewController {
    
    private func SetUpNavigationItemSetting() {
       let ButtonItems = UIBarButtonItem(image: UIImage(named: "setting"), style: .plain, target: self, action: #selector(TapSettingButton(sender:)))
+      ButtonItems.accessibilityIdentifier = IdenMane.first.SettingButton
       self.navigationItem.setLeftBarButton(ButtonItems, animated: true)
       self.navigationItem.title = NSLocalizedString("home", comment: "")
       self.navigationController?.navigationBar.barTintColor = UIColor.flatMagenta()
