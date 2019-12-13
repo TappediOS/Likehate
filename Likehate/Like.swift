@@ -46,12 +46,18 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
       SetUpNavigationItemSetting()
    }
    
+   override func setEditing(_ editing: Bool, animated: Bool) {
+       super.setEditing(editing, animated: animated)
+       tableView.isEditing = editing
+   }
+   
    //SetUp
    private func SetUpNavigationItemSetting() {
       self.navigationItem.title = NSLocalizedString("likething", comment: "")
       self.navigationController?.navigationBar.barTintColor = UIColor.flatWatermelon()
       self.navigationController?.navigationBar.tintColor = .white
       self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+      self.navigationItem.rightBarButtonItem = editButtonItem
    }
    
    /// セルの個数を指定するデリゲートメソッド（必須）
@@ -94,6 +100,30 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
       myArchiveButton.backgroundColor = UIColor(red: 0.9568627451, green: 0.2745098039, blue: 0.3647058824, alpha: 1)
       
       return [myArchiveButton]
+   }
+   
+   func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+   }
+
+   func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+   }
+   
+   func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
+   }
+
+   func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+   
+   func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+       let sourceCellItem = LikeArray[sourceIndexPath.row]
+       guard let indexPath = LikeArray.index(of: sourceCellItem) else { return }
+      
+       LikeArray.remove(at: indexPath)
+       LikeArray.insert(sourceCellItem, at: destinationIndexPath.row)
    }
 
 
