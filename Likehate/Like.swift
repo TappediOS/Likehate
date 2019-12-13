@@ -124,8 +124,23 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
       
        LikeArray.remove(at: indexPath)
        LikeArray.insert(sourceCellItem, at: destinationIndexPath.row)
+      
+      
+      print(LikeArray)
+      //save
+      defaults.set(LikeArray, forKey: "OpenLikeKey")
+      defaults.synchronize()
    }
-
+   
+   private func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+       let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "myCell")
+      cell.selectionStyle = UITableViewCell.SelectionStyle.default
+       return cell
+   }
+    
+   private func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+      tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+   }
 
    override func didReceiveMemoryWarning() {
       super.didReceiveMemoryWarning()
