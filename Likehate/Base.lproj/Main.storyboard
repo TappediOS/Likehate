@@ -299,7 +299,10 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7M-Ch-X2i" customClass="FUIButton">
-                                <rect key="frame" x="112" y="244" width="151" height="80"/>
+                                <rect key="frame" x="112" y="244" width="151" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="sVN-j2-TMj"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
@@ -320,7 +323,6 @@
                             <constraint firstItem="NSR-JG-gOT" firstAttribute="trailing" secondItem="pmg-71-78S" secondAttribute="trailing" constant="83" id="krn-TL-ZHo"/>
                             <constraint firstItem="h7M-Ch-X2i" firstAttribute="top" secondItem="aJt-0O-zNF" secondAttribute="bottom" constant="41" id="l0h-wj-JXY"/>
                             <constraint firstItem="NSR-JG-gOT" firstAttribute="trailing" secondItem="aJt-0O-zNF" secondAttribute="trailing" constant="54" id="xKd-K2-00f"/>
-                            <constraint firstItem="3vs-na-9en" firstAttribute="top" secondItem="h7M-Ch-X2i" secondAttribute="bottom" constant="36" id="z8J-QT-tiB"/>
                             <constraint firstItem="NSR-JG-gOT" firstAttribute="bottom" secondItem="3vs-na-9en" secondAttribute="bottom" constant="20" id="zmQ-6h-Vrw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NSR-JG-gOT"/>
