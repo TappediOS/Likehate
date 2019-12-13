@@ -156,11 +156,7 @@ class WritteHateViewController: UIViewController, UITextFieldDelegate, GADBanner
       print("バナー広告：本番環境")
       #endif
       
-      bannerView.translatesAutoresizingMaskIntoConstraints = false
-      bannerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-      bannerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-      bannerView.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
-      bannerView.heightAnchor.constraint(equalToConstant: view.frame.height / 2 ).isActive = true
+      //bannerView.translatesAutoresizingMaskIntoConstraints = false
       self.view.addSubview(bannerView)
       self.view.bringSubviewToFront(bannerView)
       

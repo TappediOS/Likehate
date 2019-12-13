@@ -57,6 +57,11 @@ class HateViewController: UIViewController, UITableViewDelegate, UITableViewData
       
    }
    
+   override func setEditing(_ editing: Bool, animated: Bool) {
+       super.setEditing(editing, animated: animated)
+       tableView.isEditing = editing
+   }
+   
    private func InitBannerView() {
       #if DEBUG
          print("\n\n--------INFO ADMOB--------------\n")
@@ -97,6 +102,7 @@ class HateViewController: UIViewController, UITableViewDelegate, UITableViewData
       self.navigationController?.navigationBar.barTintColor = UIColor.flatPowderBlue()
       self.navigationController?.navigationBar.tintColor = .white
       self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+      self.navigationItem.rightBarButtonItem = editButtonItem
    }
    
    /// セルの個数を指定するデリゲートメソッド（必須）
@@ -140,6 +146,54 @@ class HateViewController: UIViewController, UITableViewDelegate, UITableViewData
       
       return [myArchiveButton]
    }
+   
+   
+   func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+   }
+
+   func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+   }
+   
+   func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
+   }
+
+   func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+   
+   func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+       let sourceCellItem = HateArray[sourceIndexPath.row]
+       guard let indexPath = HateArray.index(of: sourceCellItem) else { return }
+      
+       HateArray.remove(at: indexPath)
+       HateArray.insert(sourceCellItem, at: destinationIndexPath.row)
+      
+      
+      print(HateArray)
+      //save
+      defaults.set(HateArray, forKey: "OpenHateKey")
+      defaults.synchronize()
+   }
+   
+   private func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+       let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "myCell")
+      cell.selectionStyle = UITableViewCell.SelectionStyle.default
+       return cell
+   }
+    
+   private func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+      tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+   }
+   
+   
+   
+   
+   
+   
+   
 
    override func didReceiveMemoryWarning() {
       super.didReceiveMemoryWarning()
