@@ -33,7 +33,7 @@ class NoAdsButton: FUIButton {
    }
    
    private func InitSelf() {
-      self.setTitle(NSLocalizedString("No Ads", comment: ""), for: UIControl.State.normal)
+      self.setTitle(NSLocalizedString("No Ads", comment: "") , for:　.normal)
       self.buttonColor = UIColor.flatPowderBlue()
       self.shadowColor = UIColor.flatPowderBlueColorDark() 
       self.shadowHeight = 3.0
@@ -42,7 +42,7 @@ class NoAdsButton: FUIButton {
       self.titleLabel?.adjustsFontSizeToFitWidth = true
       self.setTitleColor(UIColor.clouds(), for: UIControl.State.normal)
       self.setTitleColor(UIColor.clouds(), for: UIControl.State.highlighted)
-      self.addTarget(self, action: #selector(self.TapNoAdsButton(_:)), for: UIControl.Event.touchUpInside)
+      self.addTarget(self, action: #selector(self.TapNoAdsButton(_:)), for: touchUpInside)
    }
    
    private func CompleateBuyRemoveADS() {

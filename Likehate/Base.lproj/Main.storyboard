@@ -277,31 +277,28 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What Do You Hate ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="pmg-71-78S">
                                 <rect key="frame" x="83" y="92" width="209" height="27"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="27" id="xCQ-DX-xAr"/>
+                                    <constraint firstAttribute="height" constant="27" id="XDU-dV-GDt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aJt-0O-zNF" customClass="FUITextField">
-                                <rect key="frame" x="54" y="153" width="267" height="50"/>
+                                <rect key="frame" x="54" y="153" width="267" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="lw0-nV-WDN"/>
+                                    <constraint firstAttribute="height" constant="35" id="NUy-uK-aX3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3vs-na-9en" customClass="GADBannerView">
-                                <rect key="frame" x="16" y="360" width="343" height="287"/>
+                                <rect key="frame" x="36" y="372" width="303" height="269"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="287" id="LFj-KA-EaU"/>
-                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7M-Ch-X2i" customClass="FUIButton">
-                                <rect key="frame" x="112" y="244" width="151" height="100"/>
+                                <rect key="frame" x="112" y="228" width="151" height="74"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="sVN-j2-TMj"/>
+                                    <constraint firstAttribute="height" constant="74" id="ZXQ-ff-Gsp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Register"/>
@@ -312,18 +309,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="aJt-0O-zNF" firstAttribute="leading" secondItem="NSR-JG-gOT" secondAttribute="leading" constant="54" id="878-U8-RtE"/>
-                            <constraint firstItem="aJt-0O-zNF" firstAttribute="top" secondItem="pmg-71-78S" secondAttribute="bottom" constant="34" id="9VV-3p-gmS"/>
-                            <constraint firstItem="h7M-Ch-X2i" firstAttribute="leading" secondItem="NSR-JG-gOT" secondAttribute="leading" constant="112" id="D3g-or-HwS"/>
-                            <constraint firstItem="NSR-JG-gOT" firstAttribute="trailing" secondItem="h7M-Ch-X2i" secondAttribute="trailing" constant="112" id="EJF-Lz-zxD"/>
-                            <constraint firstItem="pmg-71-78S" firstAttribute="leading" secondItem="NSR-JG-gOT" secondAttribute="leading" constant="83" id="ODL-C2-TTo"/>
-                            <constraint firstItem="NSR-JG-gOT" firstAttribute="trailing" secondItem="3vs-na-9en" secondAttribute="trailing" constant="16" id="Svj-Lt-it4"/>
-                            <constraint firstItem="pmg-71-78S" firstAttribute="top" secondItem="NSR-JG-gOT" secondAttribute="top" constant="48" id="hR1-dg-jFc"/>
-                            <constraint firstItem="3vs-na-9en" firstAttribute="leading" secondItem="NSR-JG-gOT" secondAttribute="leading" constant="16" id="hW1-lB-I1n"/>
-                            <constraint firstItem="NSR-JG-gOT" firstAttribute="trailing" secondItem="pmg-71-78S" secondAttribute="trailing" constant="83" id="krn-TL-ZHo"/>
-                            <constraint firstItem="h7M-Ch-X2i" firstAttribute="top" secondItem="aJt-0O-zNF" secondAttribute="bottom" constant="41" id="l0h-wj-JXY"/>
-                            <constraint firstItem="NSR-JG-gOT" firstAttribute="trailing" secondItem="aJt-0O-zNF" secondAttribute="trailing" constant="54" id="xKd-K2-00f"/>
-                            <constraint firstItem="NSR-JG-gOT" firstAttribute="bottom" secondItem="3vs-na-9en" secondAttribute="bottom" constant="20" id="zmQ-6h-Vrw"/>
+                            <constraint firstItem="NSR-JG-gOT" firstAttribute="trailing" secondItem="h7M-Ch-X2i" secondAttribute="trailing" constant="112" id="1sY-gk-IIR"/>
+                            <constraint firstItem="3vs-na-9en" firstAttribute="top" secondItem="h7M-Ch-X2i" secondAttribute="bottom" constant="70" id="9eL-ta-exr"/>
+                            <constraint firstItem="h7M-Ch-X2i" firstAttribute="leading" secondItem="NSR-JG-gOT" secondAttribute="leading" constant="112" id="Bce-Qh-k5F"/>
+                            <constraint firstItem="NSR-JG-gOT" firstAttribute="trailing" secondItem="pmg-71-78S" secondAttribute="trailing" constant="83" id="I5o-pC-SHc"/>
+                            <constraint firstItem="aJt-0O-zNF" firstAttribute="top" secondItem="pmg-71-78S" secondAttribute="bottom" constant="34" id="KHZ-Gu-Fcm"/>
+                            <constraint firstItem="pmg-71-78S" firstAttribute="top" secondItem="NSR-JG-gOT" secondAttribute="top" constant="48" id="MAf-wD-umh"/>
+                            <constraint firstItem="NSR-JG-gOT" firstAttribute="bottom" secondItem="3vs-na-9en" secondAttribute="bottom" constant="26" id="MpK-hd-t3r"/>
+                            <constraint firstItem="NSR-JG-gOT" firstAttribute="trailing" secondItem="aJt-0O-zNF" secondAttribute="trailing" constant="54" id="P6J-qZ-3f8"/>
+                            <constraint firstItem="NSR-JG-gOT" firstAttribute="trailing" secondItem="3vs-na-9en" secondAttribute="trailing" constant="36" id="iY3-mh-jbi"/>
+                            <constraint firstItem="aJt-0O-zNF" firstAttribute="leading" secondItem="NSR-JG-gOT" secondAttribute="leading" constant="54" id="rNy-OH-Lub"/>
+                            <constraint firstItem="h7M-Ch-X2i" firstAttribute="top" secondItem="aJt-0O-zNF" secondAttribute="bottom" constant="40" id="rgt-3L-GCf"/>
+                            <constraint firstItem="pmg-71-78S" firstAttribute="leading" secondItem="NSR-JG-gOT" secondAttribute="leading" constant="83" id="t85-J4-POb"/>
+                            <constraint firstItem="3vs-na-9en" firstAttribute="leading" secondItem="NSR-JG-gOT" secondAttribute="leading" constant="36" id="wmO-ze-8e1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NSR-JG-gOT"/>
                     </view>
