@@ -20,7 +20,7 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
       super.viewDidLoad()
       
       if #available(iOS 13.0, *) {
-         view.backgroundColor = UIColor.systemGray6
+         view.backgroundColor = UIColor.systemBackground
       } else {
          view.backgroundColor = UIColor.white
          tableView.backgroundColor = UIColor.white

@@ -44,10 +44,7 @@ class WritteHateViewController: UIViewController, UITextFieldDelegate, GADBanner
       defaults.synchronize()
       
       if defaults.bool(forKey: "BuyRemoveAd") == true {
-         let storyboard: UIStoryboard = self.storyboard!
-         let RootView = storyboard.instantiateViewController(withIdentifier: "RootView")
-         let navi = UINavigationController(rootViewController: RootView)
-         present(navi, animated: true, completion: nil)
+         self.navigationController?.popToRootViewController(animated: true)
          return
       }
       
@@ -59,12 +56,7 @@ class WritteHateViewController: UIViewController, UITextFieldDelegate, GADBanner
          interstitial.load(request)
       } else {
          print("Ins Dont READY........\n")
-         let storyboard: UIStoryboard = self.storyboard!
-         let RootView = storyboard.instantiateViewController(withIdentifier: "RootView")
-         let navi = UINavigationController(rootViewController: RootView)
-         // アニメーションの設定
-         // navi.modalTransitionStyle = .coverVertical
-         present(navi, animated: true, completion: nil)
+         self.navigationController?.popToRootViewController(animated: true)
       }
       
    }
@@ -190,15 +182,8 @@ class WritteHateViewController: UIViewController, UITextFieldDelegate, GADBanner
    }
    //広告をクリックして開いた画面を閉じる直後
    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
-      
-      let storyboard: UIStoryboard = self.storyboard!
-      let RootView = storyboard.instantiateViewController(withIdentifier: "RootView")
-      let navi = UINavigationController(rootViewController: RootView)
-      // アニメーションの設定
-      // navi.modalTransitionStyle = .coverVertical
-      RootView.modalPresentationStyle = .fullScreen
-      navi.modalPresentationStyle = .fullScreen
-      present(navi, animated: true, completion: nil)
+
+      self.navigationController?.popToRootViewController(animated: true)
 
    }
    //広告をクリックした時
