@@ -83,6 +83,9 @@ class WritteHateViewController: UIViewController, UITextFieldDelegate, GADBanner
          }
       }
       
+      HateLabel.text = NSLocalizedString("WhatLike", comment: "")
+      HateLabel.adjustsFontSizeToFitWidth = true
+      
       InitTextField()
       InitRegiButton()
       
