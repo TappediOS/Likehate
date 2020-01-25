@@ -70,6 +70,8 @@ class WritteViewController: UIViewController {
       let StartY = ViewH / 25 * 3 + (statusBarHeight + navigationBarHeight!)
       
       like.frame = CGRect(x: StartX, y: StartY, width: ButtonWide, height: ButtonHeight)
+      like.setTitle(NSLocalizedString("Like", comment: ""), for: .normal)
+      like.titleLabel?.adjustsFontSizeToFitWidth = true
    }
    
    private func SetUpLikeButton() {
@@ -87,6 +89,8 @@ class WritteViewController: UIViewController {
       let StartY = ViewH / 25 * 13 + (statusBarHeight + navigationBarHeight!)
       
       hate.frame = CGRect(x: StartX, y: StartY, width: ButtonWide, height: ButtonHeight)
+      hate.setTitle(NSLocalizedString("Hate", comment: ""), for: .normal)
+      hate.titleLabel?.adjustsFontSizeToFitWidth = true
    }
    
    override func viewWillAppear(_ animated: Bool) {

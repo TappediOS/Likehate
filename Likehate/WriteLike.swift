@@ -75,6 +75,9 @@ class WritteLikeViewController: UIViewController, UITextFieldDelegate {
          }
       }
       
+      Label.text = NSLocalizedString("WhatHate", comment: "")
+      Label.adjustsFontSizeToFitWidth = true
+      
       SetUpNavigationItemSetting()
       
       InitImageView(AniView: AniView1)
