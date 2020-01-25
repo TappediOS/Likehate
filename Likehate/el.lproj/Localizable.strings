@@ -6,11 +6,11 @@
   Copyright © 2018年 jun. All rights reserved.
 */
 
-"like" = "like_En";
-"hate" = "hate_En";
+"like" = "like_Gre";
+"hate" = "hate_Gre";
 "delete" = "Διαγραφή δεδομένων";
 "All" = "Όλα τα δεδομένα που διαγράφονται σε αυτήν την εφαρμογή";
-"set" = "set_En";
+"set" = "set_Gre";
 
 "home" = "Σπίτι";
 

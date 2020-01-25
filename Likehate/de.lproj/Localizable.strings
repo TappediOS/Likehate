@@ -6,11 +6,11 @@
   Copyright © 2018年 jun. All rights reserved.
 */
 
-"like" = "like_En";
-"hate" = "hate_En";
+"like" = "like_Ger";
+"hate" = "hate_Ger";
 "delete" = "Daten löschen";
 "All" = "Alle Daten in dieser App löschen";
-"set" = "set_En";
+"set" = "set_Ger";
 
 "home" = "Zuhause";
 
