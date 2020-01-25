@@ -83,7 +83,7 @@ class WritteHateViewController: UIViewController, UITextFieldDelegate, GADBanner
          }
       }
       
-      HateLabel.text = NSLocalizedString("WhatLike", comment: "")
+      HateLabel.text = NSLocalizedString("WhatHate", comment: "")
       HateLabel.adjustsFontSizeToFitWidth = true
       
       InitTextField()

@@ -75,7 +75,7 @@ class WritteLikeViewController: UIViewController, UITextFieldDelegate {
          }
       }
       
-      Label.text = NSLocalizedString("WhatHate", comment: "")
+      Label.text = NSLocalizedString("WhatLike", comment: "")
       Label.adjustsFontSizeToFitWidth = true
       
       SetUpNavigationItemSetting()
