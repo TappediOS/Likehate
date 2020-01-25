@@ -34,8 +34,6 @@ class ViewController: UIViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      
-   
       if #available(iOS 13.0, *) {
          view.backgroundColor = UIColor.systemGray6
       } else {
@@ -196,12 +194,12 @@ class ViewController: UIViewController {
                      options: [.autoreverse, .repeat, .curveEaseInOut],
                      animations: {
                         let frame = self.Kaminari.frame
-                        let aniX = frame.minX + self.view.frame.width / 3 * 2
+                        let aniX = frame.minX + self.view.frame.width / 3 * 1.5
                         self.Kaminari.frame = CGRect(x: aniX, y: frame.minY, width: frame.width, height: frame.height)
                      },
                      completion: { _ in
                         let frame = self.Kaminari.frame
-                        let aniX = frame.minX - self.view.frame.width / 3 * 2
+                        let aniX = frame.minX - self.view.frame.width / 3 * 1.5
                         self.Kaminari.frame = CGRect(x: aniX, y: frame.minY, width: frame.width, height: frame.height)
                      })
    }
@@ -241,7 +239,7 @@ class ViewController: UIViewController {
    
    private func InitKaminari() {
       print(self.view.safeAreaInsets.bottom)
-      let StartY = self.view.frame.height - (self.view.frame.height / 5 + 5 + self.view.safeAreaInsets.bottom)
+      let StartY = self.view.frame.height - (self.view.frame.height / 5 + 15)
       let StartX = self.view.frame.width / 20
       let Wide = self.view.frame.height / 5
       let Hight = self.view.frame.height / 5
@@ -266,6 +264,7 @@ class ViewController: UIViewController {
       SetUpNavigationItemSetting()
       KiraKiraView2.play()
       KiraKiraView1.play()
+      Kaminari.play()
       Earth.play()
    }
    
