@@ -266,6 +266,10 @@ class ViewController: UIViewController {
       KiraKiraView1.play()
       Kaminari.play()
       Earth.play()
+      
+      Kira1AniStart()
+      Kira2AniStart()
+      KaminariAni()
    }
    
    override func didReceiveMemoryWarning() {
