@@ -8,35 +8,35 @@
 
 "like" = "like_En";
 "hate" = "hate_En";
-"delete" = "Data Erasing";
-"All" = "All data erasing in this app";
+"delete" = "محو البيانات";
+"All" = "جميع محو البيانات في هذا التطبيق";
 "set" = "set_En";
 
-"home" = "Home";
+"home" = "الصفحة الرئيسية";
 
-"register" = "Register";
+"register" = "تسجيل";
 
-"likething" = "What I Like";
-"hatething" = "What I Hate";
+"likething" = "ما أحب";
+"hatething" = "ما اكرهه";
 
-"Like" = "Like";
-"Hate" = "Hate";
+"Like" = "مثل";
+"Hate" = "اكرهه";
 
-"Delete" = "Delete";
+"Delete" = "حذف";
 
-"ThankYou" = "Thank You!";
-"Ohthankyou" = "Oh, thanks...";
+"ThankYou" = "شكرا لكم!";
+"Ohthankyou" = "شكرا...";
 
-"registe10Things" = "You register 10 Things YOU LIKE!!";
+"registe10Things" = "قمت بتسجيل 10 أشياء تحب!";
 
-"Congrats" = "Congrats!";
+"Congrats" = "مبروك!";
 
 "No Ads" = "No Ads";
 "Restore" = "Restore";
 
-"cancel" = "Cancel";
-"delete" = "Delete";
+"cancel" = "إلغاء";
+"delete" = "حذف";
 
-"doyouwanttodelete" = "Do you want to delete all data?";
-"thisoperation" = "This operation can not be undone";
+"doyouwanttodelete" = "هل تريد حذف جميع البيانات؟";
+"thisoperation" = "هذه العملية لا يمكن التراجع عنها";
 

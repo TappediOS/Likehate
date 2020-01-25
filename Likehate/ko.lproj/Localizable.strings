@@ -8,35 +8,35 @@
 
 "like" = "like_En";
 "hate" = "hate_En";
-"delete" = "Data Erasing";
-"All" = "All data erasing in this app";
+"delete" = "데이터 지우기";
+"All" = "이 앱에서 모든 데이터 지우기";
 "set" = "set_En";
 
-"home" = "Home";
+"home" = "집";
 
-"register" = "Register";
+"register" = "레지스터";
 
-"likething" = "What I Like";
-"hatething" = "What I Hate";
+"likething" = "내가 좋아하는 것";
+"hatething" = "내가 싫어하는 것";
 
-"Like" = "Like";
-"Hate" = "Hate";
+"Like" = "처럼";
+"Hate" = "미움";
 
-"Delete" = "Delete";
+"Delete" = "지우다";
 
-"ThankYou" = "Thank You!";
-"Ohthankyou" = "Oh, thanks...";
+"ThankYou" = "감사합니다!";
+"Ohthankyou" = "오 감사...";
 
-"registe10Things" = "You register 10 Things YOU LIKE!!";
+"registe10Things" = "당신이 좋아하는 10 가지를 등록하십시오!";
 
-"Congrats" = "Congrats!";
+"Congrats" = "축하합니다!";
 
-"No Ads" = "No Ads";
-"Restore" = "Restore";
+"No Ads" = "광고 없음";
+"Restore" = "복원";
 
-"cancel" = "Cancel";
-"delete" = "Delete";
+"cancel" = "취소";
+"delete" = "지우다";
 
-"doyouwanttodelete" = "Do you want to delete all data?";
-"thisoperation" = "This operation can not be undone";
+"doyouwanttodelete" = "모든 데이터를 삭제 하시겠습니까?";
+"thisoperation" = "이 작업은 취소 할 수 없습니다";
 

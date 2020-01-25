@@ -8,35 +8,35 @@
 
 "like" = "like_En";
 "hate" = "hate_En";
-"delete" = "Data Erasing";
-"All" = "All data erasing in this app";
+"delete" = "資料清除";
+"All" = "此應用中的所有數據擦除";
 "set" = "set_En";
 
-"home" = "Home";
+"home" = "家";
 
-"register" = "Register";
+"register" = "寄存器";
 
-"likething" = "What I Like";
-"hatething" = "What I Hate";
+"likething" = "我喜歡什麼";
+"hatething" = "我討厭什麼";
 
-"Like" = "Like";
-"Hate" = "Hate";
+"Like" = "喜歡";
+"Hate" = "討厭";
 
-"Delete" = "Delete";
+"Delete" = "刪除";
 
-"ThankYou" = "Thank You!";
-"Ohthankyou" = "Oh, thanks...";
+"ThankYou" = "謝謝！";
+"Ohthankyou" = "哦謝謝...";
 
-"registe10Things" = "You register 10 Things YOU LIKE!!";
+"registe10Things" = "您註冊喜歡的10件事！！";
 
-"Congrats" = "Congrats!";
+"Congrats" = "恭喜！";
 
-"No Ads" = "No Ads";
-"Restore" = "Restore";
+"No Ads" = "無廣告";
+"Restore" = "恢復";
 
-"cancel" = "Cancel";
-"delete" = "Delete";
+"cancel" = "取消";
+"delete" = "刪除";
 
-"doyouwanttodelete" = "Do you want to delete all data?";
-"thisoperation" = "This operation can not be undone";
+"doyouwanttodelete" = "您要刪除所有數據嗎？";
+"thisoperation" = "此操作無法撤消";
 

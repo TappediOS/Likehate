@@ -8,35 +8,35 @@
 
 "like" = "like_En";
 "hate" = "hate_En";
-"delete" = "Data Erasing";
-"All" = "All data erasing in this app";
+"delete" = "Διαγραφή δεδομένων";
+"All" = "Όλα τα δεδομένα που διαγράφονται σε αυτήν την εφαρμογή";
 "set" = "set_En";
 
-"home" = "Home";
+"home" = "Σπίτι";
 
-"register" = "Register";
+"register" = "Κανω ΕΓΓΡΑΦΗ";
 
-"likething" = "What I Like";
-"hatething" = "What I Hate";
+"likething" = "Τι μου αρέσει";
+"hatething" = "Τι μισώ";
 
-"Like" = "Like";
-"Hate" = "Hate";
+"Like" = "Αρέσει";
+"Hate" = "Μισώ";
 
-"Delete" = "Delete";
+"Delete" = "Διαγράφω";
 
-"ThankYou" = "Thank You!";
-"Ohthankyou" = "Oh, thanks...";
+"ThankYou" = "Σας ευχαριστώ!";
+"Ohthankyou" = "Ω ευχαριστώ...";
 
-"registe10Things" = "You register 10 Things YOU LIKE!!";
+"registe10Things" = "Εγγραφείτε 10 πράγματα που σας αρέσει !!";
 
-"Congrats" = "Congrats!";
+"Congrats" = "Συγχαρητήρια!";
 
 "No Ads" = "No Ads";
 "Restore" = "Restore";
 
-"cancel" = "Cancel";
-"delete" = "Delete";
+"cancel" = "Ματαίωση";
+"delete" = "Διαγράφω";
 
-"doyouwanttodelete" = "Do you want to delete all data?";
-"thisoperation" = "This operation can not be undone";
+"doyouwanttodelete" = "Θέλετε να διαγράψετε όλα τα δεδομένα;";
+"thisoperation" = "Αυτή η λειτουργία δεν μπορεί να ανακληθεί";
 

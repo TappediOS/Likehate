@@ -8,35 +8,35 @@
 
 "like" = "like_En";
 "hate" = "hate_En";
-"delete" = "Data Erasing";
-"All" = "All data erasing in this app";
+"delete" = "Daten löschen";
+"All" = "Alle Daten in dieser App löschen";
 "set" = "set_En";
 
-"home" = "Home";
+"home" = "Zuhause";
 
-"register" = "Register";
+"register" = "Registrieren";
 
-"likething" = "What I Like";
-"hatething" = "What I Hate";
+"likething" = "Was ich mag";
+"hatething" = "Was ich hasse";
 
-"Like" = "Like";
-"Hate" = "Hate";
+"Like" = "Mögen";
+"Hate" = "Hass";
 
-"Delete" = "Delete";
+"Delete" = "Löschen";
 
-"ThankYou" = "Thank You!";
-"Ohthankyou" = "Oh, thanks...";
+"ThankYou" = "Danke!";
+"Ohthankyou" = "Oh Danke...";
 
-"registe10Things" = "You register 10 Things YOU LIKE!!";
+"registe10Things" = "Du registrierst 10 Dinge die dir gefallen !!";
 
-"Congrats" = "Congrats!";
+"Congrats" = "Glückwunsch!";
 
 "No Ads" = "No Ads";
 "Restore" = "Restore";
 
-"cancel" = "Cancel";
-"delete" = "Delete";
+"cancel" = "Stornieren";
+"delete" = "Löschen";
 
-"doyouwanttodelete" = "Do you want to delete all data?";
-"thisoperation" = "This operation can not be undone";
+"doyouwanttodelete" = "Möchten Sie alle Daten löschen?";
+"thisoperation" = "Dieser Vorgang kann nicht rückgängig gemacht werden";
 
