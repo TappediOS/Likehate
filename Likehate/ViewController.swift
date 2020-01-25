@@ -196,12 +196,12 @@ class ViewController: UIViewController {
                      options: [.autoreverse, .repeat, .curveEaseInOut],
                      animations: {
                         let frame = self.Kaminari.frame
-                        let aniX = frame.minX + self.view.frame.width
+                        let aniX = frame.minX + self.view.frame.width / 3 * 2
                         self.Kaminari.frame = CGRect(x: aniX, y: frame.minY, width: frame.width, height: frame.height)
                      },
                      completion: { _ in
                         let frame = self.Kaminari.frame
-                        let aniX = frame.minX - self.view.frame.width
+                        let aniX = frame.minX - self.view.frame.width / 3 * 2
                         self.Kaminari.frame = CGRect(x: aniX, y: frame.minY, width: frame.width, height: frame.height)
                      })
    }
