@@ -82,7 +82,13 @@ class testViewController: UIViewController {
       Check10Like()
   
    }
-  
+   
+   
+   
+   @IBAction func TapOKButton(_ sender: Any) {
+      self.navigationController?.popToRootViewController(animated: true)
+   }
+   
    
    private func Check10Like() {
       defaults.register(defaults: ["Check10Like" : false])

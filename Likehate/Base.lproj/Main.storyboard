@@ -248,7 +248,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                 <state key="normal" title="OK !"/>
                                 <connections>
-                                    <segue destination="ppm-5t-cO6" kind="presentation" modalPresentationStyle="overFullScreen" id="30d-Q8-i6g"/>
+                                    <action selector="TapOKButton:" destination="GUM-gu-bCL" eventType="touchUpInside" id="L74-4J-j0Z"/>
                                 </connections>
                             </button>
                         </subviews>
