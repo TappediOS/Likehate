@@ -93,6 +93,7 @@ class ViewController: UIViewController {
       SetUpNavigationItemSetting()
       InitKiraView1()
       InitKiraView2()
+      InitKaminari()
       InitPurchaseButton()
       InitRestoreButton()
       InitEarth()
@@ -166,41 +167,43 @@ class ViewController: UIViewController {
    }
    
    private func Kira1AniStart() {
-      UIView.animate(withDuration: 10, animations: {
-         self.KiraKiraView1.transform = CGAffineTransform(scaleX: 2.8, y: 2.8)
-      }) { (finished) in
-         UIView.animate(withDuration: 9, animations: {
-            self.KiraKiraView1.transform = CGAffineTransform.identity
-         }) { (finished) in
-            self.Kira1AniStart()
-         }
-      }
+      UIView.animate(withDuration: 5.5,
+                     delay: 0.25,
+                     options: [.autoreverse, .repeat, .curveEaseInOut],
+                     animations: {
+                        self.KiraKiraView1.transform = CGAffineTransform(scaleX: 2.85, y: 2.85)
+                     },
+                     completion: { _ in
+                        self.KiraKiraView1.transform = CGAffineTransform.identity
+                     })
    }
    
    private func Kira2AniStart() {
-      UIView.animate(withDuration: 12, animations: {
-         self.KiraKiraView2.transform = CGAffineTransform(scaleX: 3.2, y: 3.2)
-      }) { (finished) in
-         UIView.animate(withDuration: 10.5, animations: {
-            self.KiraKiraView2.transform = CGAffineTransform.identity
-         }) { (finished) in
-            self.Kira2AniStart()
-         }
-      }
+      UIView.animate(withDuration: 6.1,
+                     delay: 0.1,
+                     options: [.autoreverse, .repeat, .curveEaseOut],
+                     animations: {
+                        self.KiraKiraView2.transform = CGAffineTransform(scaleX: 2.85, y: 2.85)
+                     },
+                     completion: { _ in
+                        self.KiraKiraView2.transform = CGAffineTransform.identity
+                     })
    }
    
    private func KaminariAni() {
-      UIView.animate(withDuration: 12, animations: {
-         //self.Kaminari.transform = CGAffineTransform(scaleX: 3, y: 3)
-         self.Kaminari.center.x += self.view.frame.width
-      }) { (finished) in
-         UIView.animate(withDuration: 13, animations: {
-            //self.Kaminari.transform = CGAffineTransform.identity
-            self.Kaminari.center.x -= self.view.frame.width
-         }) { (finished) in
-            self.KaminariAni()
-         }
-      }
+      UIView.animate(withDuration: 4.5,
+                     delay: 0.25,
+                     options: [.autoreverse, .repeat, .curveEaseInOut],
+                     animations: {
+                        let frame = self.Kaminari.frame
+                        let aniX = frame.minX + self.view.frame.width
+                        self.Kaminari.frame = CGRect(x: aniX, y: frame.minY, width: frame.width, height: frame.height)
+                     },
+                     completion: { _ in
+                        let frame = self.Kaminari.frame
+                        let aniX = frame.minX - self.view.frame.width
+                        self.Kaminari.frame = CGRect(x: aniX, y: frame.minY, width: frame.width, height: frame.height)
+                     })
    }
 
    
@@ -251,13 +254,12 @@ class ViewController: UIViewController {
       Kaminari.play()
       self.view.addSubview(Kaminari)
       KaminariAni()
-      //KaminariAniMove()
    }
    
    override func viewWillLayoutSubviews() {
       super.viewWillLayoutSubviews()
       
-      InitKaminari()
+      
    }
    
    override func viewWillAppear(_ animated: Bool) {
