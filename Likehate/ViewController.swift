@@ -49,7 +49,7 @@ class ViewController: UIViewController {
       Bottom.translatesAutoresizingMaskIntoConstraints = false
       
 
-     
+      NotificationCenter.default.addObserver(self, selector: #selector(self.viewWillEnterForeground(_:)), name: UIApplication.willEnterForegroundNotification, object: nil)
       
       
       Bottom.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -5).isActive = true
@@ -71,21 +71,30 @@ class ViewController: UIViewController {
       
       print(self.view.frame)
       
-      Top.layer.borderWidth = 1.2
+      Top.layer.borderWidth = 1.4
       Top.layer.borderColor = UIColor.flatBlack()?.cgColor
-      Top.layer.cornerRadius = 18
+      Top.layer.cornerRadius = 20
       Top.layer.masksToBounds = true
+      Top.layer.shadowOffset = CGSize(width: 5, height: 5)
+      Top.layer.shadowColor = UIColor.black.cgColor
+      //1にすれば真っ黒，0にすれば透明に
+      Top.layer.shadowOpacity = 0.8
       
-      Second.layer.borderWidth = 1.2
+      Second.layer.borderWidth = 1.4
       Second.layer.borderColor = UIColor.flatBlack()?.cgColor
-      Second.layer.cornerRadius = 18
+      Second.layer.cornerRadius = 20
       Second.layer.masksToBounds = true
+      Second.layer.shadowOffset = CGSize(width: 5, height: 5)
+      Second.layer.shadowColor = UIColor.black.cgColor
+      Second.layer.shadowOpacity = 0.8
       
-      Bottom.layer.borderWidth = 1.2
+      Bottom.layer.borderWidth = 1.4
       Bottom.layer.borderColor = UIColor.flatBlack()?.cgColor
-      Bottom.layer.cornerRadius = 18
+      Bottom.layer.cornerRadius = 20
       Bottom.layer.masksToBounds = true
-      
+      Bottom.layer.shadowOffset = CGSize(width: 5, height: 5)
+      Bottom.layer.shadowColor = UIColor.black.cgColor
+      Bottom.layer.shadowOpacity = 0.8
 
       Second.setImage(UIImage(named: NSLocalizedString("like", comment: "")), for: .normal)
       Bottom.setImage(UIImage(named: NSLocalizedString("hate", comment: "")), for: .normal)
@@ -264,15 +273,57 @@ class ViewController: UIViewController {
    }
    
    override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(true)
       SetUpNavigationItemSetting()
-      KiraKiraView2.play()
-      KiraKiraView1.play()
-      Kaminari.play()
-      Earth.play()
       
-      Kira1AniStart()
-      Kira2AniStart()
-      KaminariAni()
+      if KiraKiraView1.isAnimationPlaying == false {
+         KiraKiraView1.play()
+         Kira1AniStart()
+      }
+      
+      if KiraKiraView2.isAnimationPlaying == false {
+         KiraKiraView2.play()
+         Kira2AniStart()
+      }
+      
+      if Kaminari.isAnimationPlaying == false {
+         Kaminari.play()
+         KaminariAni()
+      }
+      
+      if Earth.isAnimationPlaying == false {
+         Earth.play()
+      }
+
+   }
+   
+   @objc func viewWillEnterForeground(_ notification: Notification?) {
+      if (self.isViewLoaded && (self.view.window != nil)) {
+         print("フォアグラウンド")
+         if KiraKiraView1.isAnimationPlaying == false {
+            KiraKiraView1.play()
+            Kira1AniStart()
+         }
+         
+         if KiraKiraView2.isAnimationPlaying == false {
+            KiraKiraView2.play()
+            Kira2AniStart()
+         }
+         
+         if Kaminari.isAnimationPlaying == false {
+            Kaminari.play()
+            KaminariAni()
+         }
+         
+         if Earth.isAnimationPlaying == false {
+            Earth.play()
+         }
+       }
+   }
+
+   
+   override func viewDidAppear(_ animated: Bool) {
+      super.viewDidAppear(true)
    }
    
    override func didReceiveMemoryWarning() {
