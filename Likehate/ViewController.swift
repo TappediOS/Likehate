@@ -71,17 +71,20 @@ class ViewController: UIViewController {
       
       print(self.view.frame)
       
-      Top.layer.borderWidth = 0.7
+      Top.layer.borderWidth = 1.2
       Top.layer.borderColor = UIColor.flatBlack()?.cgColor
-      Top.layer.cornerRadius = 10
+      Top.layer.cornerRadius = 18
+      Top.layer.masksToBounds = true
       
-      Second.layer.borderWidth = 0.7
+      Second.layer.borderWidth = 1.2
       Second.layer.borderColor = UIColor.flatBlack()?.cgColor
-      Second.layer.cornerRadius = 10
+      Second.layer.cornerRadius = 18
+      Second.layer.masksToBounds = true
       
-      Bottom.layer.borderWidth = 0.7
+      Bottom.layer.borderWidth = 1.2
       Bottom.layer.borderColor = UIColor.flatBlack()?.cgColor
-      Bottom.layer.cornerRadius = 10
+      Bottom.layer.cornerRadius = 18
+      Bottom.layer.masksToBounds = true
       
 
       Second.setImage(UIImage(named: NSLocalizedString("like", comment: "")), for: .normal)
