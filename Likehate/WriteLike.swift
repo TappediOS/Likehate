@@ -36,6 +36,8 @@ class WritteLikeViewController: UIViewController, UITextFieldDelegate {
    var num = 0
    let defaults = UserDefaults.standard
    
+   var stopTapTic = false
+   
    @IBAction func done(_ sender: Any) {
       
       
@@ -96,10 +98,17 @@ class WritteLikeViewController: UIViewController, UITextFieldDelegate {
       SetUpRemoteConfigDefaults()
       SetUpAniView()
       FetchConfig()
+      
+      StartTapTic()
    }
    
    override func viewWillAppear(_ animated: Bool) {
       SetUpNavigationItemSetting()
+   }
+   
+   override func viewDidDisappear(_ animated: Bool) {
+      super.viewDidDisappear(true)
+      stopTapTic = true
    }
    
    private func SetUpRemoteConfigDefaults() {
@@ -282,5 +291,46 @@ class WritteLikeViewController: UIViewController, UITextFieldDelegate {
    func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
    func Play3DtouchSuccess() { TapticEngine.notification.feedback(.success) }
    
+   
+   func StartTapTic() {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { self.Play3DtouchLight() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { self.Play3DtouchLight() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { self.Play3DtouchLight() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { self.Play3DtouchLight() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) { self.Play3DtouchLight() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) { self.Play3DtouchLight() }
+      
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.9) { self.Play3DtouchLight() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { self.Play3DtouchLight() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1.1) { self.Play3DtouchLight() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) { self.Play3DtouchLight() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) { self.Play3DtouchMedium() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1.4) { self.Play3DtouchMedium() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { self.Play3DtouchMedium() }
+      
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1.6) { self.Play3DtouchMedium() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1.7) { self.Play3DtouchMedium() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1.8) { self.Play3DtouchMedium() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1.9) { self.Play3DtouchMedium() }
+      
+      DispatchQueue.main.asyncAfter(deadline: .now() + 2.2) { self.Play3DtouchHeavy() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 2.35) { self.Play3DtouchHeavy() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) { self.Play3DtouchHeavy() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 2.65) { self.Play3DtouchMedium() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 2.8) { self.Play3DtouchMedium() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 2.9) { self.Play3DtouchMedium() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { self.Play3DtouchMedium() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 3.1) { self.Play3DtouchLight() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 3.1) { self.Play3DtouchLight() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 3.2) { self.Play3DtouchLight() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 3.4) { self.Play3DtouchLight() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) { self.Play3DtouchLight() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 3.6) { self.Play3DtouchLight() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 3.7) { self.Play3DtouchLight() }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 3.8) {
+         if self.stopTapTic { return }
+         self.StartTapTic()
+      }
+   }
    
 }
