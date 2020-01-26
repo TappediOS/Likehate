@@ -75,9 +75,9 @@ class ViewController: UIViewController {
       
       print(self.view.frame)
       
-      Top.layer.borderWidth = 1.4
+      Top.layer.borderWidth = 1.5
       Top.layer.borderColor = UIColor.flatBlack()?.cgColor
-      Top.layer.cornerRadius = 20
+      Top.layer.cornerRadius = 25
       Top.layer.masksToBounds = true
       Top.layer.shadowOffset = CGSize(width: 0, height: 1)
       Top.layer.shadowColor = UIColor.black.cgColor
@@ -85,18 +85,18 @@ class ViewController: UIViewController {
       Top.layer.shadowOpacity = 0.5
       Top.layer.shadowRadius = 20
       
-      Second.layer.borderWidth = 1.4
+      Second.layer.borderWidth = 1.5
       Second.layer.borderColor = UIColor.flatBlack()?.cgColor
-      Second.layer.cornerRadius = 20
+      Second.layer.cornerRadius = 25
       Second.layer.masksToBounds = true
       Second.layer.shadowOffset = CGSize(width: 0, height: 1)
       Second.layer.shadowColor = UIColor.black.cgColor
       Second.layer.shadowOpacity = 0.5
       Second.layer.shadowRadius = 20
       
-      Bottom.layer.borderWidth = 1.4
+      Bottom.layer.borderWidth = 1.5
       Bottom.layer.borderColor = UIColor.flatBlack()?.cgColor
-      Bottom.layer.cornerRadius = 20
+      Bottom.layer.cornerRadius = 25
       Bottom.layer.masksToBounds = true
       Bottom.layer.shadowOffset = CGSize(width: 0, height: 1)
       Bottom.layer.shadowColor = UIColor.black.cgColor
