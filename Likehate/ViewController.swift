@@ -11,6 +11,7 @@ import Lottie
 import ChameleonFramework
 import FlatUIKit
 import SwiftyStoreKit
+import Firebase
 
 class ViewController: UIViewController {
 
@@ -166,7 +167,13 @@ class ViewController: UIViewController {
    }
 
    @objc func TapSettingButton(sender: UIBarButtonItem) {
-      self.performSegue(withIdentifier: "HomeToSetting", sender: nil)
+      let Storybord = UIStoryboard(name: "SettingTableViewController", bundle: nil)
+      let SettingVC = Storybord.instantiateViewController(withIdentifier: "UserSettingNavigationC")
+      SettingVC.modalPresentationStyle = .pageSheet
+      present(SettingVC, animated: true, completion: {
+         print("SettingVC画面にプレゼント完了")
+         Analytics.logEvent("OpenSettingNC", parameters: nil)
+      })
    }
    
    private func SetUpNavigationItemSetting() {

@@ -7,12 +7,29 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="B75-Ja-Emx">
+            <objects>
+                <navigationController storyboardIdentifier="UserSettingNavigationC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bD8-I6-cX6" sceneMemberID="viewController">
+                    <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1qZ-OF-bTQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="v9X-in-cih" kind="relationship" relationship="rootViewController" id="XyQ-V7-cfu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aiI-RR-tMu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1299" y="-1"/>
+        </scene>
         <!--Setting Table View Controller-->
         <scene sceneID="PiV-U0-YqG">
             <objects>
                 <tableViewController storyboardIdentifier="SettingTableVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="v9X-in-cih" customClass="SettingTableViewController" customModule="Likehate" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="lgk-uk-41J">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <sections>
@@ -98,6 +115,8 @@
                             <outlet property="delegate" destination="v9X-in-cih" id="ClV-jP-kXM"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="vX9-wP-SRG"/>
+                    <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="AppReviewLabel" destination="oV6-Vt-V9n" id="sFh-1I-1yl"/>
                         <outlet property="ContacuUsLabel" destination="rVf-Ms-ey7" id="4LP-2n-eMw"/>

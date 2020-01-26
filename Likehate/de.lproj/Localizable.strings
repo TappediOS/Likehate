@@ -8,7 +8,7 @@
 
 "like" = "like_Ger";
 "hate" = "hate_Ger";
-"delete" = "Daten löschen";
+"deleteErasing" = "Daten löschen";
 "All" = "Alle Daten in dieser App löschen";
 "set" = "set_Ger";
 

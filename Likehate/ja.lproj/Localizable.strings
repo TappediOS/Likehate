@@ -8,7 +8,7 @@
 
 "like" = "like_Ja";
 "hate" = "hate_Ja";
-"delete" = "全てのデータを削除";
+"deleteErasing" = "全てのデータを削除";
 "All" = "このアプリの全データを削除しますか？";
 "set" = "set_Ja";
 

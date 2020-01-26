@@ -10,10 +10,11 @@ import Foundation
 import UIKit
 import TapticEngine
 import Firebase
+import SCLAlertView
 
 class SettingTableViewController: UITableViewController {
    
-   let numOfSection = 1
+   let numOfSection = 2
    let firstNumberOfRowsInSection = 1
    let secondNumberOfRowsInSection = 3
    
@@ -24,31 +25,46 @@ class SettingTableViewController: UITableViewController {
    @IBOutlet weak var ContacuUsLabel: UILabel!
    @IBOutlet weak var CreditsLabel: UILabel!
    
+   let defaults = UserDefaults.standard
+   var HateArray: [String] = []
+   var LikeArray: [String] = []
    
    override func viewDidLoad() {
       super.viewDidLoad()
-      
+       Analytics.logEvent("showSettinVC", parameters: nil)
       SetUpView()
       SetUpNavigationBar()
       SetUpLabelText()
    }
    
    private func SetUpView() {
-      self.view.backgroundColor = UIColor.init(red: 255 / 255, green: 255 / 255, blue: 240 / 255, alpha: 1)
+      if #available(iOS 13.0, *) {
+         view.backgroundColor = UIColor.systemGray6
+      } else {
+         view.backgroundColor = UIColor.white
+      }
    }
    
    private func SetUpNavigationBar() {
-      //let stopItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(TapDoneButton))
-      //stopItem.tintColor = .black
-      //self.navigationItem.leftBarButtonItem = stopItem
+      let stopItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(TapDoneButton))
+      stopItem.tintColor = .black
+      self.navigationItem.leftBarButtonItem = stopItem
+   }
+   
+   //MARK:- NaviBarでバツボタン押されたときの処理
+   @objc func TapDoneButton() {
+      print("完了ボタンタップされた")
+      self.dismiss(animated: true, completion: {
+         print("SettingVCのdismiss完了")
+      })
    }
    
    private func SetUpLabelText() {
-      DataErasingLabel.text = NSLocalizedString("delete", comment: "")
+      DataErasingLabel.text = NSLocalizedString("deleteErasing", comment: "")
       
-      AppReviewLabel.text = NSLocalizedString("PlayCount", comment: "")
+      AppReviewLabel.text = NSLocalizedString("AppRevie", comment: "")
       ContacuUsLabel.text = NSLocalizedString("ContactUs", comment: "")
-      CreditsLabel.text = NSLocalizedString("AppRevie", comment: "")
+      CreditsLabel.text = NSLocalizedString("Credits", comment: "")
 
    }
    
@@ -79,13 +95,10 @@ class SettingTableViewController: UITableViewController {
       
       switch indexPath.section {
       case 0:
-         TapNicName()
+         TapDataErasing()
          print("")
       case 1:
-         TapUserInfo(rowNum: indexPath.row)
-         print("")
-      case 2:
-         //TapOther(rowNum: indexPath.row)
+         TapOther(rowNum: indexPath.row)
          print("")
       default:
          print("設定ミスってるぞ！！！")
@@ -96,13 +109,86 @@ class SettingTableViewController: UITableViewController {
    }
    
    
-   func TapNicName() {
+   func TapDataErasing() {
+      Analytics.logEvent("TapDataErasing", parameters: nil)
+      Play3DtouchHeavy()
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
+      let ComleateView = SCLAlertView(appearance: Appearanse)
+      ComleateView.addButton(NSLocalizedString("delete", comment: "")){
+         self.Play3DtouchSuccess()
+         Analytics.logEvent("delete all date", parameters: nil)
+         self.LikeArray = []
+         self.HateArray = []
+         
+         self.defaults.set(self.LikeArray, forKey: "OpenLikeKey")
+         self.defaults.synchronize()
+         self.defaults.set(self.HateArray, forKey: "OpenHateKey")
+         self.defaults.synchronize()
+      }
       
+      ComleateView.addButton(NSLocalizedString("cancel", comment: "")){
+         self.Play3DtouchLight()
+         Analytics.logEvent("delete cannel", parameters: nil)
+      }
+      ComleateView.showWarning(NSLocalizedString("doyouwanttodelete", comment: ""), subTitle: NSLocalizedString("thisoperation", comment: ""))
    }
    
-   func TapUserInfo(rowNum: Int) {
-      
+   func TapOther(rowNum: Int) {
+      switch rowNum {
+           case 0:
+              TapAppReview()
+              print("")
+           case 1:
+              TapContacuUs()
+              print("")
+           case 2:
+              TapCredits()
+              print("")
+           default:
+              print("設定ミスってるぞ！！！")
+              return
+           }
    }
+   
+   func TapAppReview() {
+      Analytics.logEvent("TapAppReview", parameters: nil)
+      Play3DtouchHeavy()
+      if #available(iOS 10.3, *) {
+          SKStoreReviewController.requestReview()
+      }else {
+         if let url = URL(string: "itms-apps://itunes.apple.com/app/id1406645257?action=write-review") {
+            UIApplication.shared.open(url, options: [:])
+         }
+      }
+   }
+   
+   func TapContacuUs() {
+      Analytics.logEvent("TapContacuUs", parameters: nil)
+      Play3DtouchLight()
+      let url = URL(string: "https://forms.gle/mSEq7WwDz3fZNcqF6")
+      if let OpenURL = url {
+         if UIApplication.shared.canOpenURL(OpenURL){
+            Analytics.logEvent("OpenContactUsURLSetting", parameters: nil)
+            UIApplication.shared.open(OpenURL)
+         }else{
+            Analytics.logEvent("CantOpenURSettingL", parameters: nil)
+            print("URL nil ちゃうのにひらけない")
+         }
+      }else{
+         Analytics.logEvent("CantOpenURLWithNilSetting", parameters: nil)
+         print("URL 開こうとしたらNilやった")
+      }
+   }
+   
+   func TapCredits() {
+      Analytics.logEvent("TapCredits", parameters: nil)
+      Play3DtouchMedium()
+      Analytics.logEvent("TapCredit", parameters: nil)
+      if let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) {
+         UIApplication.shared.open(url, options: [:], completionHandler: nil)
+      }
+   }
+   
    
    func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
    func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }

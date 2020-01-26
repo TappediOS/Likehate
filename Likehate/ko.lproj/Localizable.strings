@@ -8,7 +8,7 @@
 
 "like" = "like_Ko";
 "hate" = "hate_Ko";
-"delete" = "데이터 지우기";
+"deleteErasing" = "데이터 지우기";
 "All" = "이 앱에서 모든 데이터 지우기";
 "set" = "set_Ko";
 

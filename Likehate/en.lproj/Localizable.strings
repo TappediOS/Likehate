@@ -8,7 +8,7 @@
 
 "like" = "like_En";
 "hate" = "hate_En";
-"delete" = "Data Erasing";
+"deleteErasing" = "Data Erasing";
 "All" = "All data erasing in this app";
 "set" = "set_En";
 

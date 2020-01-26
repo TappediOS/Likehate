@@ -38,7 +38,7 @@ class WritteHateViewController: UIViewController, UITextFieldDelegate, GADBanner
    
    @IBAction func done(_ sender: Any) {
       if HateTextField.text == "" { return }
-      Analytics.logEvent("RegiLike", parameters: nil)
+      Analytics.logEvent("RegiHate", parameters: nil)
       HateArray.append((self.HateTextField.text)!)
       defaults.set(HateArray, forKey: "OpenHateKey")
       defaults.synchronize()

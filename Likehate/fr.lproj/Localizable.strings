@@ -8,7 +8,7 @@
 
 "like" = "like_Fra";
 "hate" = "hate_Fra";
-"delete" = "Effacement des données";
+"deleteErasing" = "Effacement des données";
 "All" = "Effacement de toutes les données dans cette application";
 "set" = "set_Fra";
 

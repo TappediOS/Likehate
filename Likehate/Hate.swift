@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMobileAds
+import Firebase
 
 class HateViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GADBannerViewDelegate {
    
@@ -27,6 +28,8 @@ class HateViewController: UIViewController, UITableViewDelegate, UITableViewData
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      
+      Analytics.logEvent("showHateTableView", parameters: nil)
       
       
       if #available(iOS 13.0, *) {

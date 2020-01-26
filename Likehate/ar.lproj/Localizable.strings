@@ -8,7 +8,7 @@
 
 "like" = "like_Ara";
 "hate" = "hate_Ara";
-"delete" = "محو البيانات";
+"deleteErasing" = "محو البيانات";
 "All" = "جميع محو البيانات في هذا التطبيق";
 "set" = "set_Ara";
 

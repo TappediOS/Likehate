@@ -8,7 +8,7 @@
 
 "like" = "like_Swe";
 "hate" = "hate_Swe";
-"delete" = "Radering av data";
+"deleteErasing" = "Radering av data";
 "All" = "All data radering i den här appen";
 "set" = "set_Swe";
 

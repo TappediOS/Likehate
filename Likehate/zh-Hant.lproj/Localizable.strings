@@ -8,7 +8,7 @@
 
 "like" = "like_Chi_Tra";
 "hate" = "hate_Chi_Tra";
-"delete" = "資料清除";
+"deleteErasing" = "資料清除";
 "All" = "此應用中的所有數據擦除";
 "set" = "set_Chi_Tra";
 
