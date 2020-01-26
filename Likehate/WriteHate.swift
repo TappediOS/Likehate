@@ -11,6 +11,7 @@ import GoogleMobileAds
 import ChameleonFramework
 import FlatUIKit
 import Firebase
+import TapticEngine
 
 class WritteHateViewController: UIViewController, UITextFieldDelegate, GADBannerViewDelegate, GADInterstitialDelegate  {
    
@@ -37,7 +38,11 @@ class WritteHateViewController: UIViewController, UITextFieldDelegate, GADBanner
    
    
    @IBAction func done(_ sender: Any) {
-      if HateTextField.text == "" { return }
+      if HateTextField.text == "" {
+         Play3DtouchError()
+         return
+      }
+      Play3DtouchSuccess()
       Analytics.logEvent("RegiHate", parameters: nil)
       HateArray.append((self.HateTextField.text)!)
       defaults.set(HateArray, forKey: "OpenHateKey")
@@ -65,7 +70,7 @@ class WritteHateViewController: UIViewController, UITextFieldDelegate, GADBanner
   
    override func viewDidLoad() {
       super.viewDidLoad()
-      
+      Play3DtouchMedium()
       HateTextField.delegate = self
       
       
@@ -227,6 +232,10 @@ class WritteHateViewController: UIViewController, UITextFieldDelegate, GADBanner
       return true
    }
    
-   
+   func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
+   func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
+   func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
+   func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
+   func Play3DtouchSuccess() { TapticEngine.notification.feedback(.success) }
    
 }

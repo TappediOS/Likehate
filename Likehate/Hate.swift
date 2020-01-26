@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMobileAds
 import Firebase
+import TapticEngine
 
 class HateViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GADBannerViewDelegate {
    
@@ -28,7 +29,7 @@ class HateViewController: UIViewController, UITableViewDelegate, UITableViewData
    
    override func viewDidLoad() {
       super.viewDidLoad()
-      
+      Play3DtouchMedium()
       Analytics.logEvent("showHateTableView", parameters: nil)
       
       
@@ -238,4 +239,9 @@ class HateViewController: UIViewController, UITableViewDelegate, UITableViewData
       print("adViewWillLeaveApplication")
    }
    
+   func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
+   func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
+   func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
+   func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
+   func Play3DtouchSuccess() { TapticEngine.notification.feedback(.success) }
 }

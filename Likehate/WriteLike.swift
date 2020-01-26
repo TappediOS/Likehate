@@ -12,6 +12,7 @@ import FlatUIKit
 import Lottie
 import Firebase
 import FirebaseRemoteConfig
+import TapticEngine
 
 class WritteLikeViewController: UIViewController, UITextFieldDelegate {
    
@@ -38,7 +39,14 @@ class WritteLikeViewController: UIViewController, UITextFieldDelegate {
    @IBAction func done(_ sender: Any) {
       
       
-      if TextField.text == "" { return }
+      
+      if TextField.text == "" {
+         Play3DtouchError()
+         return
+         
+      }
+      
+      Play3DtouchSuccess()
       
       Analytics.logEvent("RegiLike", parameters: nil)
       
@@ -50,7 +58,7 @@ class WritteLikeViewController: UIViewController, UITextFieldDelegate {
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      
+      Play3DtouchMedium()
       
       InitTextField()
       InitRegiButton()
@@ -268,7 +276,11 @@ class WritteLikeViewController: UIViewController, UITextFieldDelegate {
    
    
    
-
+   func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
+   func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
+   func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
+   func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
+   func Play3DtouchSuccess() { TapticEngine.notification.feedback(.success) }
    
    
 }

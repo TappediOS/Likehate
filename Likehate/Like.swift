@@ -8,6 +8,8 @@
 
 import UIKit
 import ChameleonFramework
+import Firebase
+import TapticEngine
 
 class LikeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
    
@@ -18,6 +20,9 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
  
    override func viewDidLoad() {
       super.viewDidLoad()
+      
+      Play3DtouchMedium()
+      Analytics.logEvent("showLikeTableView", parameters: nil)
       
       if #available(iOS 13.0, *) {
          view.backgroundColor = UIColor.systemBackground
@@ -147,4 +152,9 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
       // Dispose of any resources that can be recreated.
    }
    
+   func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
+   func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
+   func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
+   func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
+   func Play3DtouchSuccess() { TapticEngine.notification.feedback(.success) }
 }

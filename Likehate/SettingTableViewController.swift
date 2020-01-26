@@ -31,7 +31,7 @@ class SettingTableViewController: UITableViewController {
    
    override func viewDidLoad() {
       super.viewDidLoad()
-       Analytics.logEvent("showSettinVC", parameters: nil)
+      Analytics.logEvent("showSettinVC", parameters: nil)
       SetUpView()
       SetUpNavigationBar()
       SetUpLabelText()

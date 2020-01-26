@@ -12,6 +12,7 @@ import ChameleonFramework
 import FlatUIKit
 import SwiftyStoreKit
 import Firebase
+import TapticEngine
 
 class ViewController: UIViewController {
 
@@ -34,6 +35,8 @@ class ViewController: UIViewController {
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      
+      Play3DtouchMedium()
       
       if #available(iOS 13.0, *) {
          view.backgroundColor = UIColor.systemGray6
@@ -167,6 +170,7 @@ class ViewController: UIViewController {
    }
 
    @objc func TapSettingButton(sender: UIBarButtonItem) {
+      Play3DtouchMedium()
       let Storybord = UIStoryboard(name: "SettingTableViewController", bundle: nil)
       let SettingVC = Storybord.instantiateViewController(withIdentifier: "UserSettingNavigationC")
       SettingVC.modalPresentationStyle = .pageSheet
@@ -347,6 +351,12 @@ class ViewController: UIViewController {
       // Dispose of any resources that can be recreated.
    }
 
+   
+   func Play3DtouchLight()  { TapticEngine.impact.feedback(.light) }
+   func Play3DtouchMedium() { TapticEngine.impact.feedback(.medium) }
+   func Play3DtouchHeavy()  { TapticEngine.impact.feedback(.heavy) }
+   func Play3DtouchError() { TapticEngine.notification.feedback(.error) }
+   func Play3DtouchSuccess() { TapticEngine.notification.feedback(.success) }
 
 }
 
