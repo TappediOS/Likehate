@@ -170,7 +170,13 @@ class ViewController: UIViewController {
    }
    
    private func SetUpNavigationItemSetting() {
-      let ButtonItems = UIBarButtonItem(image: UIImage(named: "setting"), style: .plain, target: self, action: #selector(TapSettingButton(sender:)))
+      var image = UIImage()
+      if #available(iOS 13, *) {
+         image = UIImage(systemName: "gear")!
+      } else {
+         image = UIImage(named: "setting")!
+      }
+      let ButtonItems = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(TapSettingButton(sender:)))
       ButtonItems.accessibilityIdentifier = IdenMane.first.SettingButton
       self.navigationItem.setLeftBarButton(ButtonItems, animated: true)
       self.navigationItem.title = NSLocalizedString("home", comment: "")
@@ -180,11 +186,11 @@ class ViewController: UIViewController {
    }
    
    private func Kira1AniStart() {
-      UIView.animate(withDuration: 5.5,
+      UIView.animate(withDuration: 4,
                      delay: 0.25,
                      options: [.autoreverse, .repeat, .curveEaseInOut],
                      animations: {
-                        self.KiraKiraView1.transform = CGAffineTransform(scaleX: 2.85, y: 2.85)
+                        self.KiraKiraView1.transform = CGAffineTransform(scaleX: 2.9, y: 2.9)
                      },
                      completion: { _ in
                         self.KiraKiraView1.transform = CGAffineTransform.identity
@@ -192,11 +198,11 @@ class ViewController: UIViewController {
    }
    
    private func Kira2AniStart() {
-      UIView.animate(withDuration: 6.1,
+      UIView.animate(withDuration: 4.85,
                      delay: 0.1,
                      options: [.autoreverse, .repeat, .curveEaseOut],
                      animations: {
-                        self.KiraKiraView2.transform = CGAffineTransform(scaleX: 2.85, y: 2.85)
+                        self.KiraKiraView2.transform = CGAffineTransform(scaleX: 2.9, y: 2.9)
                      },
                      completion: { _ in
                         self.KiraKiraView2.transform = CGAffineTransform.identity
@@ -204,7 +210,7 @@ class ViewController: UIViewController {
    }
    
    private func KaminariAni() {
-      UIView.animate(withDuration: 4.5,
+      UIView.animate(withDuration: 4.25,
                      delay: 0.25,
                      options: [.autoreverse, .repeat, .curveEaseInOut],
                      animations: {

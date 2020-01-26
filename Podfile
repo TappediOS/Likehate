@@ -26,6 +26,8 @@ target 'Likehate' do
 
   pod 'LicensePlist'
 
+  pod 'TapticEngine'
+
 end
 
 target 'LikehateTests' do
