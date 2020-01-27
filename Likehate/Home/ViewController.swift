@@ -35,25 +35,6 @@ class ViewController: UIViewController {
    
    override func viewDidLoad() {
       super.viewDidLoad()
-      
-      Play3DtouchMedium()
-      
-      
-      
-      
-      
-      
-      
-
-      
-      
-      
-      
-   
-
-
-      
-      
       InitViewSetting()
       InitNotification()
       InitBottom()
@@ -71,7 +52,6 @@ class ViewController: UIViewController {
       InitPurchaseButton()
       InitRestoreButton()
       InitEarth()
-      
       InitAccessibilityIdentifure()
    }
    
