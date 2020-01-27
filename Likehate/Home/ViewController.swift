@@ -45,11 +45,11 @@ class ViewController: UIViewController {
       }
       
       Top.accessibilityIgnoresInvertColors = true
-      Second.accessibilityIgnoresInvertColors = true
+      
       
       
       Top.translatesAutoresizingMaskIntoConstraints = false
-      Second.translatesAutoresizingMaskIntoConstraints = false
+      
       
       
 
@@ -58,10 +58,7 @@ class ViewController: UIViewController {
       
       
       
-      Second.bottomAnchor.constraint(equalTo: Bottom.topAnchor, constant: -self.view.frame.width / 20).isActive = true
-      Second.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: self.view.frame.width / 20).isActive = true
-      Second.widthAnchor.constraint(equalToConstant: self.view.frame.width / 20 * 18).isActive = true
-      Second.heightAnchor.constraint(equalToConstant: self.view.frame.height / 5).isActive = true
+      
       
       Top.bottomAnchor.constraint(equalTo: Second.topAnchor, constant: -self.view.frame.width / 20).isActive = true
       Top.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: self.view.frame.width / 20).isActive = true
@@ -130,7 +127,12 @@ class ViewController: UIViewController {
    }
    
    func InitSecond() {
-      
+      Second.translatesAutoresizingMaskIntoConstraints = false
+      Second.accessibilityIgnoresInvertColors = true
+      Second.bottomAnchor.constraint(equalTo: Bottom.topAnchor, constant: -self.view.frame.width / 20).isActive = true
+      Second.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: self.view.frame.width / 20).isActive = true
+      Second.widthAnchor.constraint(equalToConstant: self.view.frame.width / 20 * 18).isActive = true
+      Second.heightAnchor.constraint(equalToConstant: self.view.frame.height / 5).isActive = true
    }
    
    func InitTop() {
