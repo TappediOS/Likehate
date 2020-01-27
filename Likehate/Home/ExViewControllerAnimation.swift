@@ -19,7 +19,7 @@ extension ViewController {
                      },
                      completion: { _ in
                         self.KiraKiraView1.transform = CGAffineTransform.identity
-                     })
+      })
    }
    
    func Kira2AniStart() {
@@ -31,7 +31,7 @@ extension ViewController {
                      },
                      completion: { _ in
                         self.KiraKiraView2.transform = CGAffineTransform.identity
-                     })
+      })
    }
    
    func KaminariAni() {
@@ -47,6 +47,6 @@ extension ViewController {
                         let frame = self.Kaminari.frame
                         let aniX = frame.minX - self.view.frame.width / 3 * 1.5
                         self.Kaminari.frame = CGRect(x: aniX, y: frame.minY, width: frame.width, height: frame.height)
-                     })
+      })
    }
 }
