@@ -56,9 +56,7 @@ class ViewController: UIViewController {
    
 
 
-      Second.setImage(UIImage(named: NSLocalizedString("like", comment: "")), for: .normal)
-      Bottom.setImage(UIImage(named: NSLocalizedString("hate", comment: "")), for: .normal)
-      Top.setImage(UIImage(named: NSLocalizedString("set", comment: "")), for: .normal)
+      
       
       
       
@@ -68,6 +66,7 @@ class ViewController: UIViewController {
       InitButtonLayerSetting(button: Top)
       InitButtonLayerSetting(button: Second)
       InitButtonLayerSetting(button: Bottom)
+      InitButtonImage()
       
       SetUpNavigationItemSetting()
       InitKiraView1()
@@ -117,6 +116,12 @@ class ViewController: UIViewController {
       //1にすれば真っ黒，0にすれば透明に
       button.layer.shadowOpacity = 0.5
       button.layer.shadowRadius = 20
+   }
+   
+   func InitButtonImage() {
+      Top.setImage(UIImage(named: NSLocalizedString("set", comment: "")), for: .normal)
+      Second.setImage(UIImage(named: NSLocalizedString("like", comment: "")), for: .normal)
+      Bottom.setImage(UIImage(named: NSLocalizedString("hate", comment: "")), for: .normal)
    }
    
    
