@@ -107,6 +107,7 @@ class ViewController: UIViewController {
       Bottom.setImage(UIImage(named: NSLocalizedString("hate", comment: "")), for: .normal)
       Top.setImage(UIImage(named: NSLocalizedString("set", comment: "")), for: .normal)
       
+      
       SetUpNavigationItemSetting()
       InitKiraView1()
       InitKiraView2()
