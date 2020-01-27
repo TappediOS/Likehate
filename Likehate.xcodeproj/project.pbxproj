@@ -309,8 +309,8 @@
 		BFB4886C23DE9C2500BF6602 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				BF22F47320DE6EB800B56F99 /* Like.swift */,
-				BF22F47520DE6EC000B56F99 /* Hate.swift */,
+				BFB4887723DEA76900BF6602 /* LikeTableView */,
+				BFB4887523DEA75F00BF6602 /* HateTableView */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -342,6 +342,22 @@
 				BF22F47720DE6EE600B56F99 /* Writte.swift */,
 			);
 			path = Chose;
+			sourceTree = "<group>";
+		};
+		BFB4887523DEA75F00BF6602 /* HateTableView */ = {
+			isa = PBXGroup;
+			children = (
+				BF22F47520DE6EC000B56F99 /* Hate.swift */,
+			);
+			path = HateTableView;
+			sourceTree = "<group>";
+		};
+		BFB4887723DEA76900BF6602 /* LikeTableView */ = {
+			isa = PBXGroup;
+			children = (
+				BF22F47320DE6EB800B56F99 /* Like.swift */,
+			);
+			path = LikeTableView;
 			sourceTree = "<group>";
 		};
 		BFE2138422D1A67400132D44 /* Lottie */ = {
