@@ -108,6 +108,7 @@ class ViewController: UIViewController {
       Top.setImage(UIImage(named: NSLocalizedString("set", comment: "")), for: .normal)
       
       
+      
       SetUpNavigationItemSetting()
       InitKiraView1()
       InitKiraView2()
