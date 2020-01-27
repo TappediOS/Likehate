@@ -87,14 +87,14 @@ class ViewController: UIViewController {
       let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
       let ComleateView = SCLAlertView(appearance: Appearanse)
       ComleateView.addButton(NSLocalizedString("ThankYou", comment: "")){
-         Analytics.logEvent("TapSCLAlertView", parameters: nil)
+         Analytics.logEvent("TapSCLAlertViewFor10LikeThing", parameters: nil)
          if #available(iOS 10.3, *) {
             SKStoreReviewController.requestReview()
          }
       }
       ComleateView.addButton(NSLocalizedString("Ohthankyou", comment: "")){
          print("tap")
-         Analytics.logEvent("UserTap_OhThanks...For100", parameters: nil)
+         Analytics.logEvent("UserTap_OhThanks...For10", parameters: nil)
       }
       ComleateView.showSuccess(NSLocalizedString("registe10Things", comment: ""), subTitle: NSLocalizedString("Congrats", comment: ""))
    }
