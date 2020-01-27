@@ -44,11 +44,7 @@ class ViewController: UIViewController {
          view.backgroundColor = UIColor.white
       }
       
-      Top.accessibilityIgnoresInvertColors = true
       
-      
-      
-      Top.translatesAutoresizingMaskIntoConstraints = false
       
       
       
@@ -60,10 +56,7 @@ class ViewController: UIViewController {
       
       
       
-      Top.bottomAnchor.constraint(equalTo: Second.topAnchor, constant: -self.view.frame.width / 20).isActive = true
-      Top.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: self.view.frame.width / 20).isActive = true
-      Top.widthAnchor.constraint(equalToConstant: self.view.frame.width / 20 * 18).isActive = true
-      Top.heightAnchor.constraint(equalToConstant: self.view.frame.height / 5).isActive = true
+      
       
     
       
@@ -136,7 +129,12 @@ class ViewController: UIViewController {
    }
    
    func InitTop() {
-      
+      Top.accessibilityIgnoresInvertColors = true
+      Top.translatesAutoresizingMaskIntoConstraints = false
+      Top.bottomAnchor.constraint(equalTo: Second.topAnchor, constant: -self.view.frame.width / 20).isActive = true
+      Top.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: self.view.frame.width / 20).isActive = true
+      Top.widthAnchor.constraint(equalToConstant: self.view.frame.width / 20 * 18).isActive = true
+      Top.heightAnchor.constraint(equalToConstant: self.view.frame.height / 5).isActive = true
    }
    
    
