@@ -38,18 +38,14 @@ class ViewController: UIViewController {
       
       Play3DtouchMedium()
       
-      if #available(iOS 13.0, *) {
-         view.backgroundColor = UIColor.systemGray6
-      } else {
-         view.backgroundColor = UIColor.white
-      }
+      
       
       
       
       
       
 
-      NotificationCenter.default.addObserver(self, selector: #selector(self.viewWillEnterForeground(_:)), name: UIApplication.willEnterForegroundNotification, object: nil)
+      
       
       
       
@@ -58,8 +54,8 @@ class ViewController: UIViewController {
 
       
       
-      
-      
+      InitViewSetting()
+      InitNotification()
       InitBottom()
       InitSecond()
       InitTop()
@@ -77,6 +73,18 @@ class ViewController: UIViewController {
       InitEarth()
       
       InitAccessibilityIdentifure()
+   }
+   
+   func InitViewSetting() {
+      if #available(iOS 13.0, *) {
+         view.backgroundColor = UIColor.systemGray6
+         return
+      }
+      view.backgroundColor = UIColor.white
+   }
+   
+   func InitNotification() {
+      NotificationCenter.default.addObserver(self, selector: #selector(self.viewWillEnterForeground(_:)), name: UIApplication.willEnterForegroundNotification, object: nil)
    }
    
    func InitBottom() {
