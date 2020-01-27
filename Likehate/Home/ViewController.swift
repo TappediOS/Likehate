@@ -128,6 +128,7 @@ class ViewController: UIViewController {
       }
    }
    
+   //MARK:- foregroundに戻ったときにアニメーションを再生する
    @objc func viewWillEnterForeground(_ notification: Notification?) {
       if (self.isViewLoaded && (self.view.window != nil)) {
          print("フォアグラウンド")
