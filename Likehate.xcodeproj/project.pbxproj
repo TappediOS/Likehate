@@ -47,6 +47,7 @@
 		BFA4BAB8233F2634005421E9 /* Iden.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA4BAB7233F2634005421E9 /* Iden.swift */; };
 		BFAC571920E229EB00813CC9 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC571820E229EB00813CC9 /* test.swift */; };
 		BFB4887223DEA34900BF6602 /* ExViewControllerInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB4887123DEA34900BF6602 /* ExViewControllerInit.swift */; };
+		BFB4887423DEA40F00BF6602 /* ExViewControllerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB4887323DEA40F00BF6602 /* ExViewControllerAnimation.swift */; };
 		BFE2138622D1A67E00132D44 /* Fuwa.json in Resources */ = {isa = PBXBuildFile; fileRef = BFE2138522D1A67E00132D44 /* Fuwa.json */; };
 		BFE2138822D1A6C000132D44 /* KuruKuru.json in Resources */ = {isa = PBXBuildFile; fileRef = BFE2138722D1A6C000132D44 /* KuruKuru.json */; };
 		BFE2138A22D1A70800132D44 /* MoreHarts.json in Resources */ = {isa = PBXBuildFile; fileRef = BFE2138922D1A70800132D44 /* MoreHarts.json */; };
@@ -155,6 +156,7 @@
 		BFA4BAB7233F2634005421E9 /* Iden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Iden.swift; sourceTree = "<group>"; };
 		BFAC571820E229EB00813CC9 /* test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		BFB4887123DEA34900BF6602 /* ExViewControllerInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExViewControllerInit.swift; sourceTree = "<group>"; };
+		BFB4887323DEA40F00BF6602 /* ExViewControllerAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExViewControllerAnimation.swift; sourceTree = "<group>"; };
 		BFE2138522D1A67E00132D44 /* Fuwa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Fuwa.json; sourceTree = "<group>"; };
 		BFE2138722D1A6C000132D44 /* KuruKuru.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = KuruKuru.json; sourceTree = "<group>"; };
 		BFE2138922D1A70800132D44 /* MoreHarts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MoreHarts.json; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				BF22F46320DE6E4C00B56F99 /* ViewController.swift */,
+				BFB4887323DEA40F00BF6602 /* ExViewControllerAnimation.swift */,
 				BFB4887123DEA34900BF6602 /* ExViewControllerInit.swift */,
 				BF4323CD22D4977B008DF038 /* NoAdsButton.swift */,
 				BF4323D222D49821008DF038 /* RestoreButton.swift */,
@@ -684,6 +687,7 @@
 			files = (
 				BF22F47420DE6EB800B56F99 /* Like.swift in Sources */,
 				BF22F47A20DE744400B56F99 /* WriteHate.swift in Sources */,
+				BFB4887423DEA40F00BF6602 /* ExViewControllerAnimation.swift in Sources */,
 				BFA4BAB4233F0BA1005421E9 /* AccessibilityIdentifire.swift in Sources */,
 				BF77128D23DD467E00EF0D3C /* SettingTableViewController.swift in Sources */,
 				BF22F46420DE6E4C00B56F99 /* ViewController.swift in Sources */,
