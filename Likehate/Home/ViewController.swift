@@ -108,6 +108,9 @@ class ViewController: UIViewController {
       Top.setImage(UIImage(named: NSLocalizedString("set", comment: "")), for: .normal)
       
       
+      InitBottom()
+      InitSecond()
+      InitTop()
       
       SetUpNavigationItemSetting()
       InitKiraView1()
@@ -120,15 +123,25 @@ class ViewController: UIViewController {
       InitAccessibilityIdentifure()
    }
    
+   func InitBottom() {
+      
+   }
+   
+   func InitSecond() {
+      
+   }
+   
+   func InitTop() {
+      
+   }
+   
+   
    func InitAccessibilityIdentifure() {
       Top.accessibilityIdentifier = "RegiButton"
       Second.accessibilityIdentifier = "GoLikeButton"
       Bottom.accessibilityIdentifier = "GoHateButton"
-      
       noAdsButton.accessibilityIdentifier = "NoAdButton"
       restoreButton.accessibilityIdentifier = "RestoreButton"
-      
-      
    }
    
    private func InitPurchaseButton() {
