@@ -53,51 +53,21 @@ class ViewController: UIViewController {
       
       
       
-      
-      
-      
-      
-      
-    
-      
-      print(self.view.frame)
-      
-      Top.layer.borderWidth = 1.5
-      Top.layer.borderColor = UIColor.flatBlack()?.cgColor
-      Top.layer.cornerRadius = 25
-      Top.layer.masksToBounds = true
-      Top.layer.shadowOffset = CGSize(width: 0, height: 1)
-      Top.layer.shadowColor = UIColor.black.cgColor
-      //1にすれば真っ黒，0にすれば透明に
-      Top.layer.shadowOpacity = 0.5
-      Top.layer.shadowRadius = 20
-      
-      Second.layer.borderWidth = 1.5
-      Second.layer.borderColor = UIColor.flatBlack()?.cgColor
-      Second.layer.cornerRadius = 25
-      Second.layer.masksToBounds = true
-      Second.layer.shadowOffset = CGSize(width: 0, height: 1)
-      Second.layer.shadowColor = UIColor.black.cgColor
-      Second.layer.shadowOpacity = 0.5
-      Second.layer.shadowRadius = 20
-      
-      Bottom.layer.borderWidth = 1.5
-      Bottom.layer.borderColor = UIColor.flatBlack()?.cgColor
-      Bottom.layer.cornerRadius = 25
-      Bottom.layer.masksToBounds = true
-      Bottom.layer.shadowOffset = CGSize(width: 0, height: 1)
-      Bottom.layer.shadowColor = UIColor.black.cgColor
-      Bottom.layer.shadowOpacity = 0.5
-      Bottom.layer.shadowRadius = 20
+   
+
 
       Second.setImage(UIImage(named: NSLocalizedString("like", comment: "")), for: .normal)
       Bottom.setImage(UIImage(named: NSLocalizedString("hate", comment: "")), for: .normal)
       Top.setImage(UIImage(named: NSLocalizedString("set", comment: "")), for: .normal)
       
       
+      
       InitBottom()
       InitSecond()
       InitTop()
+      InitButtonLayerSetting(button: Top)
+      InitButtonLayerSetting(button: Second)
+      InitButtonLayerSetting(button: Bottom)
       
       SetUpNavigationItemSetting()
       InitKiraView1()
@@ -135,6 +105,18 @@ class ViewController: UIViewController {
       Top.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: self.view.frame.width / 20).isActive = true
       Top.widthAnchor.constraint(equalToConstant: self.view.frame.width / 20 * 18).isActive = true
       Top.heightAnchor.constraint(equalToConstant: self.view.frame.height / 5).isActive = true
+   }
+   
+   func InitButtonLayerSetting(button: UIButton) {
+      button.layer.borderWidth = 1.5
+      button.layer.borderColor = UIColor.flatBlack()?.cgColor
+      button.layer.cornerRadius = 25
+      button.layer.masksToBounds = true
+      button.layer.shadowOffset = CGSize(width: 0, height: 1)
+      button.layer.shadowColor = UIColor.black.cgColor
+      //1にすれば真っ黒，0にすれば透明に
+      button.layer.shadowOpacity = 0.5
+      button.layer.shadowRadius = 20
    }
    
    
