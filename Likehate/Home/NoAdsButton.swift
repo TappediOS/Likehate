@@ -23,13 +23,8 @@ class NoAdsButton: FUIButton {
    
    override init(frame: CGRect) {
       super.init(frame: frame)
-      
       CheckIAPInfomation()
-      
       InitSelf()
-      
-      
-      
    }
    
    private func InitSelf() {
