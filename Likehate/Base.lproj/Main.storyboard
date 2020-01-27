@@ -37,6 +37,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.87851853950000003" green="1" blue="0.82482097409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
+                                    <action selector="TapRegisterButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6or-qj-Vnj"/>
                                     <segue destination="bZD-0K-bUy" kind="show" id="r39-au-qYL"/>
                                 </connections>
                             </button>

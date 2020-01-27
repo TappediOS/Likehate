@@ -66,6 +66,9 @@ class ViewController: UIViewController {
       })
    }
    
+   @IBAction func TapRegisterButton(_ sender: Any) {
+      Play3DtouchMedium()
+   }
    
    
    private func Check10Like() {
