@@ -13,6 +13,7 @@ import FlatUIKit
 import SwiftyStoreKit
 import Firebase
 import TapticEngine
+import SCLAlertView
 
 class ViewController: UIViewController {
 
@@ -29,6 +30,7 @@ class ViewController: UIViewController {
    let Kaminari = AnimationView(name: "Kaminari")
    let Earth = AnimationView(name: "earth")
    
+   let defaults = UserDefaults.standard
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -64,8 +66,46 @@ class ViewController: UIViewController {
       })
    }
    
+   
+   
+   private func Check10Like() {
+      var LikeArray: [String] = []
+      if defaults.object(forKey: "OpenLikeKey") != nil {
+         let object = defaults.object(forKey: "OpenLikeKey") as? [String]
+         for nameString in object! {
+            LikeArray.append(nameString as String)
+         }
+      }
+      
+      if LikeArray.count == 10 && defaults.bool(forKey: "Check10Like") == false {
+         defaults.set(true, forKey: "Check10Like")
+         CelebrationLikeCount10AndAppStoreReview()
+      }
+   }
+   
+   private func CelebrationLikeCount10AndAppStoreReview() {
+      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
+      let ComleateView = SCLAlertView(appearance: Appearanse)
+      ComleateView.addButton(NSLocalizedString("ThankYou", comment: "")){
+         Analytics.logEvent("TapSCLAlertView", parameters: nil)
+         if #available(iOS 10.3, *) {
+            SKStoreReviewController.requestReview()
+         }
+      }
+      ComleateView.addButton(NSLocalizedString("Ohthankyou", comment: "")){
+         print("tap")
+         Analytics.logEvent("UserTap_OhThanks...For100", parameters: nil)
+      }
+      ComleateView.showSuccess(NSLocalizedString("registe10Things", comment: ""), subTitle: NSLocalizedString("Congrats", comment: ""))
+   }
+   
    override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(true)
+      defaults.register(defaults: ["Check10Like" : false])
+      if defaults.bool(forKey: "Check10Like") == false {
+         Check10Like()
+      }
+      
       SetUpNavigationItemSetting()
       
       if KiraKiraView1.isAnimationPlaying == false {

@@ -79,7 +79,6 @@ class testViewController: UIViewController {
       
       SetUpDoneButton()
       
-      Check10Like()
   
    }
    
@@ -90,30 +89,7 @@ class testViewController: UIViewController {
    }
    
    
-   private func Check10Like() {
-      defaults.register(defaults: ["Check10Like" : false])
-      if LikeArray.count == 10 && defaults.bool(forKey: "Check10Like") == false {
-         defaults.set(true, forKey: "Check10Like")
-         CelebrationLikeCount10AndAppStoreReview()
-      }
-   }
    
-   private func CelebrationLikeCount10AndAppStoreReview() {
-      let Appearanse = SCLAlertView.SCLAppearance(showCloseButton: false)
-      let ComleateView = SCLAlertView(appearance: Appearanse)
-      ComleateView.addButton(NSLocalizedString("ThankYou", comment: "")){
-         print("tap")
-         Analytics.logEvent("TapSCLAlertView", parameters: nil)
-         if #available(iOS 10.3, *) {
-            SKStoreReviewController.requestReview()
-         }
-      }
-      ComleateView.addButton(NSLocalizedString("Ohthankyou", comment: "")){
-         print("tap")
-         Analytics.logEvent("UserTap_OhThanks...For100", parameters: nil)
-      }
-      ComleateView.showSuccess(NSLocalizedString("registe10Things", comment: ""), subTitle: NSLocalizedString("Congrats", comment: ""))
-   }
 
    private func SetUpDoneButton() {
       done?.titleLabel?.adjustsFontSizeToFitWidth = true

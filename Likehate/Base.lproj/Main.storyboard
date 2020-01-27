@@ -190,7 +190,6 @@
                                 <state key="normal" title="Register"/>
                                 <connections>
                                     <action selector="done:" destination="hua-PW-uJf" eventType="touchUpInside" id="nnX-a7-njb"/>
-                                    <segue destination="GUM-gu-bCL" kind="show" id="bpp-bN-aAn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -218,53 +217,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xXx-pR-RDE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3068" y="658.92053973013503"/>
-        </scene>
-        <!--Test View Controller-->
-        <scene sceneID="XNH-yI-qbn">
-            <objects>
-                <viewController id="GUM-gu-bCL" customClass="testViewController" customModule="Likehate" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dSA-bj-yrO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e6A-Lf-c7l" customClass="HeartLoadingView" customModule="HeartLoadingView">
-                                <rect key="frame" x="24" y="181" width="327" height="327"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="327" id="YGo-wB-2ou"/>
-                                    <constraint firstAttribute="height" constant="327" id="kp1-Gq-Mox"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Let's accumulate 100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="e1e-YD-NS5">
-                                <rect key="frame" x="81" y="107" width="212" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D88-qj-ul9" customClass="FUIButton">
-                                <rect key="frame" x="128" y="528" width="119" height="81"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
-                                <state key="normal" title="OK !"/>
-                                <connections>
-                                    <action selector="TapOKButton:" destination="GUM-gu-bCL" eventType="touchUpInside" id="L74-4J-j0Z"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="v3N-9M-5bO"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="OVQ-36-LrQ"/>
-                    <connections>
-                        <outlet property="done" destination="D88-qj-ul9" id="MR2-qM-cp3"/>
-                        <outlet property="label" destination="e1e-YD-NS5" id="gaZ-aA-vje"/>
-                        <outlet property="testView" destination="e6A-Lf-c7l" id="7kC-YH-aLE"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V6D-eR-TaX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3068" y="1424.4377811094455"/>
         </scene>
         <!--Writte Hate View Controller-->
         <scene sceneID="xbw-bW-Jl4">

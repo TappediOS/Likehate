@@ -39,22 +39,18 @@ class WritteLikeViewController: UIViewController, UITextFieldDelegate {
    var stopTapTic = false
    
    @IBAction func done(_ sender: Any) {
-      
-      
-      
       if TextField.text == "" {
          Play3DtouchError()
          return
-         
       }
       
       Play3DtouchSuccess()
-      
       Analytics.logEvent("RegiLike", parameters: nil)
       
       LikeArray.append((self.TextField.text)!)
       defaults.set(LikeArray, forKey: "OpenLikeKey")
       defaults.synchronize()
+      self.navigationController?.popToRootViewController(animated: true)
    }
    
    override func viewDidLoad() {
