@@ -46,20 +46,17 @@ class ViewController: UIViewController {
       
       Top.accessibilityIgnoresInvertColors = true
       Second.accessibilityIgnoresInvertColors = true
-      Bottom.accessibilityIgnoresInvertColors = true
+      
       
       Top.translatesAutoresizingMaskIntoConstraints = false
       Second.translatesAutoresizingMaskIntoConstraints = false
-      Bottom.translatesAutoresizingMaskIntoConstraints = false
+      
       
 
       NotificationCenter.default.addObserver(self, selector: #selector(self.viewWillEnterForeground(_:)), name: UIApplication.willEnterForegroundNotification, object: nil)
       
       
-      Bottom.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -5).isActive = true
-      Bottom.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: self.view.frame.width / 20).isActive = true
-      Bottom.widthAnchor.constraint(equalToConstant: self.view.frame.width / 20 * 18).isActive = true
-      Bottom.heightAnchor.constraint(equalToConstant: self.view.frame.height / 5).isActive = true
+      
       
       Second.bottomAnchor.constraint(equalTo: Bottom.topAnchor, constant: -self.view.frame.width / 20).isActive = true
       Second.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: self.view.frame.width / 20).isActive = true
@@ -124,7 +121,12 @@ class ViewController: UIViewController {
    }
    
    func InitBottom() {
-      
+      Bottom.accessibilityIgnoresInvertColors = true
+      Bottom.translatesAutoresizingMaskIntoConstraints = false
+      Bottom.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -5).isActive = true
+      Bottom.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: self.view.frame.width / 20).isActive = true
+      Bottom.widthAnchor.constraint(equalToConstant: self.view.frame.width / 20 * 18).isActive = true
+      Bottom.heightAnchor.constraint(equalToConstant: self.view.frame.height / 5).isActive = true
    }
    
    func InitSecond() {
