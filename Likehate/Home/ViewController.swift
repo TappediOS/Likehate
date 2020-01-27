@@ -17,19 +17,16 @@ import TapticEngine
 class ViewController: UIViewController {
 
    @IBOutlet weak var Top: UIButton!
-   
    @IBOutlet weak var Second: UIButton!
-   
    @IBOutlet weak var Bottom: UIButton!
    
    var noAdsButton: NoAdsButton!
    var restoreButton: RestoreButton!
    
+   //Lottieのアニメーション
    let KiraKiraView1 = AnimationView(name: "KiraKira")
    let KiraKiraView2 = AnimationView(name: "KiraKira")
-   
    let Kaminari = AnimationView(name: "Kaminari")
-   
    let Earth = AnimationView(name: "earth")
    
    
@@ -55,6 +52,7 @@ class ViewController: UIViewController {
       InitAccessibilityIdentifure()
    }
    
+   //MARK:- 設定ボタンを押したときの処理
    @objc func TapSettingButton(sender: UIBarButtonItem) {
       Play3DtouchMedium()
       let Storybord = UIStoryboard(name: "SettingTableViewController", bundle: nil)
@@ -64,54 +62,6 @@ class ViewController: UIViewController {
          print("SettingVC画面にプレゼント完了")
          Analytics.logEvent("OpenSettingNC", parameters: nil)
       })
-   }
-   
-   private func Kira1AniStart() {
-      UIView.animate(withDuration: 4,
-                     delay: 0.25,
-                     options: [.autoreverse, .repeat, .curveEaseInOut],
-                     animations: {
-                        self.KiraKiraView1.transform = CGAffineTransform(scaleX: 2.9, y: 2.9)
-                     },
-                     completion: { _ in
-                        self.KiraKiraView1.transform = CGAffineTransform.identity
-                     })
-   }
-   
-   private func Kira2AniStart() {
-      UIView.animate(withDuration: 4.85,
-                     delay: 0.1,
-                     options: [.autoreverse, .repeat, .curveEaseOut],
-                     animations: {
-                        self.KiraKiraView2.transform = CGAffineTransform(scaleX: 2.9, y: 2.9)
-                     },
-                     completion: { _ in
-                        self.KiraKiraView2.transform = CGAffineTransform.identity
-                     })
-   }
-   
-   private func KaminariAni() {
-      UIView.animate(withDuration: 4.25,
-                     delay: 0.25,
-                     options: [.autoreverse, .repeat, .curveEaseInOut],
-                     animations: {
-                        let frame = self.Kaminari.frame
-                        let aniX = frame.minX + self.view.frame.width / 3 * 1.5
-                        self.Kaminari.frame = CGRect(x: aniX, y: frame.minY, width: frame.width, height: frame.height)
-                     },
-                     completion: { _ in
-                        let frame = self.Kaminari.frame
-                        let aniX = frame.minX - self.view.frame.width / 3 * 1.5
-                        self.Kaminari.frame = CGRect(x: aniX, y: frame.minY, width: frame.width, height: frame.height)
-                     })
-   }
-
-   
-   
-   override func viewWillLayoutSubviews() {
-      super.viewWillLayoutSubviews()
-      
-      
    }
    
    override func viewWillAppear(_ animated: Bool) {
@@ -136,7 +86,6 @@ class ViewController: UIViewController {
       if Earth.isAnimationPlaying == false {
          Earth.play()
       }
-
    }
    
    @objc func viewWillEnterForeground(_ notification: Notification?) {
@@ -160,7 +109,7 @@ class ViewController: UIViewController {
          if Earth.isAnimationPlaying == false {
             Earth.play()
          }
-       }
+      }
    }
 
    
