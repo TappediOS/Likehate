@@ -52,6 +52,8 @@ class ViewController: UIViewController {
       InitRestoreButton()
       InitEarth()
       InitAccessibilityIdentifure()
+      
+      CheckOpenCount()
    }
    
    //MARK:- 設定ボタンを押したときの処理
@@ -68,6 +70,13 @@ class ViewController: UIViewController {
    
    @IBAction func TapRegisterButton(_ sender: Any) {
       Play3DtouchMedium()
+   }
+   
+   private func CheckOpenCount() {
+      let openCount = UserDefaults.standard.integer(forKey: "openCount")
+      if openCount == 3 || openCount == 5 || openCount == 10 || openCount == 12 || openCount == 13{
+         SKStoreReviewController.requestReview()
+      }
    }
    
    

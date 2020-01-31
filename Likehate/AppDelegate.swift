@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import SwiftyStoreKit
+import FirebaseMessaging
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -70,6 +71,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       
       UIApplication.shared.applicationIconBadgeNumber = 0
       
+      //------------------- OpenCount-----------------//
+      UserDefaults.standard.register(defaults:["openCount": 0])
+      let openCount = UserDefaults.standard.integer(forKey: "openCount")
+      UserDefaults.standard.set(openCount + 1, forKey: "openCount")
+      print("起動回数 = \(UserDefaults.standard.integer(forKey: "openCount"))")
+      //------------------- OpenCount-----------------//
       
       return true
    }
