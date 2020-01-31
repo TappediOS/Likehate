@@ -50,9 +50,9 @@ extension ViewController {
    }
    
    func InitButtonLayerSetting(button: UIButton) {
-      button.layer.borderWidth = 1.5
+      button.layer.borderWidth = 1.75
       button.layer.borderColor = UIColor.flatBlack()?.cgColor
-      button.layer.cornerRadius = 25
+      button.layer.cornerRadius = 28
       button.layer.masksToBounds = true
       button.layer.shadowOffset = CGSize(width: 0, height: 1)
       button.layer.shadowColor = UIColor.black.cgColor

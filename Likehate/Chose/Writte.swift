@@ -26,22 +26,31 @@ class WritteViewController: UIViewController {
       
       self.view.backgroundColor = UIColor.flatWhite()
       
-      hate.layer.borderWidth = 0.25
-      hate.layer.borderColor = UIColor.black.cgColor
-      hate.layer.cornerRadius = 10
+      hate.layer.borderWidth = 2
+      hate.layer.borderColor = UIColor.flatBlack()?.cgColor
+      hate.layer.cornerRadius = 35
       hate.accessibilityIdentifier = "seeHateButton"
+      hate.layer.shadowOffset = CGSize(width: 2.85, height: 2.85)
+      hate.layer.shadowColor = UIColor.black.cgColor
+      hate.layer.shadowOpacity = 0.3
+      hate.layer.shadowRadius = 2
       
-      like.layer.borderWidth = 0.25
-      like.layer.borderColor = UIColor.black.cgColor
-      like.layer.cornerRadius = 10
+      like.layer.borderWidth = 2
+      like.layer.borderColor = UIColor.flatBlack()?.cgColor
+      like.layer.cornerRadius = 35
       like.accessibilityIdentifier = "seeLikeButton"
+      like.layer.shadowOffset = CGSize(width: 2.85, height: 2.85)
+      like.layer.shadowColor = UIColor.black.cgColor
+      //1にすれば真っ黒，0にすれば透明に
+      like.layer.shadowOpacity = 0.3
+      like.layer.shadowRadius = 2
       
       if #available(iOS 13.0, *) {
          view.backgroundColor = UIColor.systemBackground
          like.backgroundColor = UIColor.systemGray6
-         like.setTitleColor(.label, for: .normal)
+         like.setTitleColor(.systemPink, for: .normal)
          hate.backgroundColor = .systemGray6
-         hate.setTitleColor(.label, for: .normal)
+         hate.setTitleColor(.systemIndigo, for: .normal)
       }
       
       SetUpLateButton()
