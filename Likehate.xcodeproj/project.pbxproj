@@ -40,6 +40,7 @@
 		BF6562D020E77F9400294710 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF6562CF20E77F9400294710 /* GoogleService-Info.plist */; };
 		BF6562EA20E8D48D00294710 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF6562EC20E8D48D00294710 /* Localizable.strings */; };
 		BF6562F220EB129000294710 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF6562F420EB129000294710 /* InfoPlist.strings */; };
+		BF7403D823E402A5004AE099 /* LikeHateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7403D723E402A5004AE099 /* LikeHateCell.xib */; };
 		BF77128B23DD467200EF0D3C /* SettingTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF77128A23DD467200EF0D3C /* SettingTableViewController.storyboard */; };
 		BF77128D23DD467E00EF0D3C /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF77128C23DD467E00EF0D3C /* SettingTableViewController.swift */; };
 		BF77128F23DD60B300EF0D3C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF77128E23DD60B300EF0D3C /* Settings.bundle */; };
@@ -117,6 +118,7 @@
 		BF6562EF20E8D4A400294710 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BF6562F320EB129000294710 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BF6562F520EB129600294710 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BF7403D723E402A5004AE099 /* LikeHateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeHateCell.xib; sourceTree = "<group>"; };
 		BF77126623DC2ED600EF0D3C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		BF77126723DC2ED600EF0D3C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		BF77126823DC2ED700EF0D3C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -297,6 +299,14 @@
 			path = Extention;
 			sourceTree = "<group>";
 		};
+		BF7403D623E40276004AE099 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BF7403D723E402A5004AE099 /* LikeHateCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		BFB4886B23DE9C2100BF6602 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +319,7 @@
 		BFB4886C23DE9C2500BF6602 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				BF7403D623E40276004AE099 /* Cell */,
 				BFB4887723DEA76900BF6602 /* LikeTableView */,
 				BFB4887523DEA75F00BF6602 /* HateTableView */,
 			);
@@ -527,6 +538,7 @@
 				BFE2138822D1A6C000132D44 /* KuruKuru.json in Resources */,
 				BF2FB16523111AFB0033C104 /* MaruKuru.json in Resources */,
 				BF6562D020E77F9400294710 /* GoogleService-Info.plist in Resources */,
+				BF7403D823E402A5004AE099 /* LikeHateCell.xib in Resources */,
 				BF22F46920DE6E4D00B56F99 /* Assets.xcassets in Resources */,
 				BF2FB163231117FD0033C104 /* Good.json in Resources */,
 				BF22F46720DE6E4C00B56F99 /* Main.storyboard in Resources */,
