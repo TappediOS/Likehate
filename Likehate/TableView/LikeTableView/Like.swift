@@ -76,15 +76,23 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
       let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "myCell")
       // セルに表示するテキストを作る
       cell.textLabel?.text = LikeArray[indexPath.row]
-      cell.textLabel?.font = UIFont(name: "HiraginoSans-W3", size: 30)
+      cell.textLabel?.font = UIFont(name: "HiraginoSans-W3", size: 25)
       cell.textLabel?.adjustsFontSizeToFitWidth = true
+      cell.textLabel?.minimumScaleFactor = 0.3
+      cell.textLabel?.numberOfLines = 3
       
       // セルをリターンする
       return cell
    }
    
    /// セルが選択された時に呼ばれるデリゲートメソッド
-//   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
+   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      print("タップされたせる: \(indexPath.row)")
+      
+      print(tableView.visibleCells[indexPath.row].textLabel?.text)
+      
+      //tableView.visibleCells[indexPath.row].textLabel?.text! += "a"
+   }
    
 
    /*
