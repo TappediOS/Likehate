@@ -91,7 +91,7 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
       
       print(tableView.visibleCells[indexPath.row].textLabel?.text)
       
-      //tableView.visibleCells[indexPath.row].textLabel?.text! += "a"
+      tableView.deselectRow(at: indexPath, animated: true)
    }
    
 
@@ -154,6 +154,8 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
    private func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
       tableView.deselectRow(at: indexPath as IndexPath, animated: true)
    }
+   
+
 
    override func didReceiveMemoryWarning() {
       super.didReceiveMemoryWarning()

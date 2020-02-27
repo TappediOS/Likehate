@@ -127,7 +127,9 @@ class HateViewController: UIViewController, UITableViewDelegate, UITableViewData
    }
    
    /// セルが選択された時に呼ばれるデリゲートメソッド
-//   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
+   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      tableView.deselectRow(at: indexPath, animated: true)
+   }
    
    
    /*
